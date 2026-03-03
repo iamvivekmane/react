@@ -23,21 +23,46 @@
             )
         }
 
-        function ChatMessage(props) {
-            const message = props.message;
-            return (
-                <div>
-                    <img src="user.png" width="50" />
-                    {message}
-                </div>
-            )
+        function ChatMessage({ message, sender }) {
+
+            // function ChatMessage(props) {
+
+
+            // const message = props.message;
+            // const sender = props.sender;
+
+            // Above lines are same as the line below
+            // const { message, sender } = props;
+
+            if (sender === 'user') {
+
+                return (
+                    <div>
+                        {message}
+                        <img src="user.png" width="50" />
+                    </div>
+                )
+            }
+
+            if (sender === "robot") {
+                return (
+                    <div>
+                        <img src="robot.png" width="50" />
+                        {message}
+                    </div>
+                )
+            }
+
+
         }
- 
+
         const app = (
             <>
                 <ChatInput />
-                <ChatMessage message="Hello chatbot" />
-                <ChatMessage message="Hello how can i help you" />
+                <ChatMessage message="Hello chatbot" sender="user" />
+                <ChatMessage message="Hello how can i help you" sender="robot" />
+                <ChatMessage message="Tell me the day" sender="user" />
+                <ChatMessage message="Today is monday" sender="robot" />
             </>
         );
 
