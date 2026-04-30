@@ -10,7 +10,8 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextUtil" aboutText="aboutTextUtil" />
+      <Navbar title="TextUtils" aboutText={78} />
+      <Navbar />
     </>
   )
 }
