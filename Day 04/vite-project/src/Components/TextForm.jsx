@@ -14,21 +14,48 @@ const TextForm = (props) => {
 
     const handleUpperClick = () => {
         // console.log("handling upper click");
-        let newText = text.toUpperCase();
-        setText(newText);
+        let upperText = text.toUpperCase();
+        setText(upperText);
+    }
+
+    const handleLowerClick = () => {
+        // console.log("handling lower click");
+        let lowerText = text.toLowerCase();
+        setText(lowerText);
+    }
+
+    const handleClearClick = () => {
+        // console.log("handling clear click");
+        setText("");
+    }
+
+    const handleRemoveSpaceClick = () => {
+        let spaceRemovedText = text.replaceAll(" ", "");
+        setText(spaceRemovedText);
+        spaceRemovedText.
     }
 
 
     return (
-        <div>
+        <>
             <div className="container my-3">
                 <div className="mb-3">
                     <h1>{props.heading}</h1>
                     <textarea className="form-control" id="myBox" rows="10" onChange={handleOnChange} value={text}></textarea>
                 </div>
                 <button className="btn btn-primary" onClick={handleUpperClick}>Convert to uppercase</button>
+                <button className="btn btn-primary mx-3" onClick={handleLowerClick}>Convert to lowercase</button>
+                <button className="btn btn-primary mx-3" onClick={handleClearClick}>Clear text</button>
+                <button className="btn btn-primary mx-3" onClick={handleRemoveSpaceClick}>Remove spaces</button>
             </div>
-        </div>
+            <div className="container my-3">
+                <h2>Your text summary</h2>
+                <p>{text.length > 0 ? text.split(" ").length : 0} words, {text.length} characters</p>
+                <p>{text.length > 0 ? 0.008 * text.split(" ").length : text.length} Minutes read</p>
+                <h2>Preview</h2>
+                <p>{text}</p>
+            </div>
+        </>
     )
 }
 
