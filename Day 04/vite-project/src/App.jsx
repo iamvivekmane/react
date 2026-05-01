@@ -5,6 +5,7 @@ import heroImg from './assets/hero.png'
 import './App.css'
 import Navbar from './Components/Navbar'
 import TextForm from './Components/TextForm'
+import About from './Components/About'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,7 +14,9 @@ function App() {
     <>
       <Navbar title="TextUtils" aboutText="About" />
       <TextForm heading="Enter text to analyze" />
+      {/* <About /> */}
     </>
+
   )
 }
 

@@ -32,7 +32,6 @@ const TextForm = (props) => {
     const handleRemoveSpaceClick = () => {
         let spaceRemovedText = text.replaceAll(" ", "");
         setText(spaceRemovedText);
-        spaceRemovedText.
     }
 
 
