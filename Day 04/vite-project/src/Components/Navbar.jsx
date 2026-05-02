@@ -7,7 +7,13 @@ const capitalize = (word) => {
     return lower.charAt(0).toUpperCase() + lower.slice(1);
 }
 
+
+
+
 const Navbar = (props) => {
+    const setMode = (mode) => {
+        props.toggleMode(mode);
+    }
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} >
             <div className="container-fluid">
@@ -30,9 +36,11 @@ const Navbar = (props) => {
                     </div> */}
 
                     <div className="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary" onClick={() => document.body.style.backgroundColor = 'black'} >Black</button>
-                        <button type="button" class="btn btn-primary" onClick={() => document.body.style.backgroundColor = 'red'}  >Red</button>
-                        <button type="button" class="btn btn-primary" onClick={() => document.body.style.backgroundColor = 'blue'} >Blue</button>
+                        <button type="button" class="btn btn-primary" onClick={() => setMode('black')} >Dark</button>
+                        <button type="button" class="btn btn-primary" onClick={() => setMode('white')} >Light</button>
+                        <button type="button" class="btn btn-primary" onClick={() => setMode('red')} >Red</button>
+                        <button type="button" class="btn btn-primary" onClick={() => setMode('blue')} >Blue</button>
+
                     </div>
                 </div>
             </div>

@@ -38,13 +38,12 @@ function App() {
 
 
 
-  // const toggleMode = (mode) => {
-  //   // setMode(selectedMode);
-  //   showAlert('success', 'Dark mode has been enabled');
-  //   console.log("clickieeed");
-
-  //   document.body.style.backgroundColor = mode
-  // }
+  const toggleMode = (mode) => {
+    // setMode(selectedMode);
+    showAlert('success', 'Dark mode has been enabled');
+    console.log("clickieeed");
+    document.body.style.backgroundColor = mode
+  }
 
 
 
@@ -56,7 +55,7 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextUtils" aboutText="About" mode={mode} />
+      <Navbar title="TextUtils" aboutText="About" toggleMode={toggleMode} />
       <Alert alert={alert} />
       <TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} />
       {/* <About /> */}
