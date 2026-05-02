@@ -20,28 +20,43 @@ function App() {
     })
     setTimeout(() => {
       setAlert(null);
-    }, 1500);
+    }, 2000);
   }
 
-  const toggleMode = () => {
-    if (mode === 'light') {
-      setMode('dark');
-      showAlert('success', 'Dark mode has been enabled');
-      document.body.style.backgroundColor = '#042743'
-    }
-    else {
-      setMode('light');
-      showAlert('success', 'Light mode has been enabled');
-      document.body.style.backgroundColor = 'white'
-    }
-  }
+  // const toggleMode = () => {
+  //   if (mode === 'light') {
+  //     setMode('dark');
+  //     showAlert('success', 'Dark mode has been enabled');
+  //     document.body.style.backgroundColor = '#042743'
+  //   }
+  //   else {
+  //     setMode('light');
+  //     showAlert('success', 'Light mode has been enabled');
+  //     document.body.style.backgroundColor = 'white'
+  //   }
+  // }
+
+
+
+  // const toggleMode = (mode) => {
+  //   // setMode(selectedMode);
+  //   showAlert('success', 'Dark mode has been enabled');
+  //   console.log("clickieeed");
+
+  //   document.body.style.backgroundColor = mode
+  // }
+
+
+
+
+
 
 
 
 
   return (
     <>
-      <Navbar title="TextUtils" aboutText="About" mode={mode} toggleMode={toggleMode} />
+      <Navbar title="TextUtils" aboutText="About" mode={mode} />
       <Alert alert={alert} />
       <TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} />
       {/* <About /> */}

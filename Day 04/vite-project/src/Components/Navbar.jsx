@@ -1,6 +1,12 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
+
+const capitalize = (word) => {
+    let lower = word.toLowerCase();
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+}
+
 const Navbar = (props) => {
     return (
         <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} >
@@ -18,9 +24,15 @@ const Navbar = (props) => {
                             <a className="nav-link" href="#">{props.aboutText}</a>
                         </li>
                     </ul>
-                    <div className={`form-check form-switch text-${props.mode === 'dark' ? 'light' : 'dark'}`}>
+                    {/* <div className={`form-check form-switch text-${props.mode === 'dark' ? 'light' : 'dark'}`}>
                         <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="switchCheckDefault" />
-                        <label className="form-check-label" htmlFor="switchCheckDefault">Enable Dark Mode</label>
+                        <label className="form-check-label" htmlFor="switchCheckDefault">{props.mode === 'dark' ? 'Light Mode' : 'Dark Mode'}</label>
+                    </div> */}
+
+                    <div className="btn-group" role="group" aria-label="Basic example">
+                        <button type="button" class="btn btn-primary" onClick={() => document.body.style.backgroundColor = 'black'} >Black</button>
+                        <button type="button" class="btn btn-primary" onClick={() => document.body.style.backgroundColor = 'red'}  >Red</button>
+                        <button type="button" class="btn btn-primary" onClick={() => document.body.style.backgroundColor = 'blue'} >Blue</button>
                     </div>
                 </div>
             </div>
