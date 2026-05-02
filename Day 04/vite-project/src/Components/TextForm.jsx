@@ -1,6 +1,7 @@
 //Comments are for debugging purpose
 
 import React, { useState } from 'react'
+
 const TextForm = (props) => {
     const [text, setText] = useState("");
     // text = "this is the text"; // wrong way to change the state
@@ -10,28 +11,35 @@ const TextForm = (props) => {
         // console.log("handling the on change");
         setText(e.target.value);
         // console.log(text);
+
     }
 
     const handleUpperClick = () => {
         // console.log("handling upper click");
         let upperText = text.toUpperCase();
         setText(upperText);
+        props.showAlert('success', 'Converted to upper case');
     }
 
     const handleLowerClick = () => {
         // console.log("handling lower click");
         let lowerText = text.toLowerCase();
         setText(lowerText);
+        props.showAlert('success', 'Converted to lower case');
+
     }
 
     const handleClearClick = () => {
         // console.log("handling clear click");
         setText("");
+        props.showAlert('success', 'Cleared text');
+
     }
 
     const handleRemoveSpaceClick = () => {
         let spaceRemovedText = text.replaceAll(" ", "");
         setText(spaceRemovedText);
+        props.showAlert('success', 'Removed spaces');
     }
 
 
