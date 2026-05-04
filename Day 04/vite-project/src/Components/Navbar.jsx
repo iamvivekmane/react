@@ -11,13 +11,13 @@ const capitalize = (word) => {
 
 
 const Navbar = (props) => {
-    const setMode = (mode) => {
-        props.toggleMode(mode);
+    const setColor = (mode) => {
+        props.changeMode(mode);
     }
     return (
-        <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`} >
+        <nav className="navbar navbar-expand-lg" style={{ backgroundColor: props.navbarColor }} >
             <div className="container-fluid">
-                <a className="navbar-brand" href="#">{props.title}</a>
+                <a className={`navbar-brand text-${props.textColor}`} href="#">{props.title}</a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                 </button>
@@ -36,10 +36,10 @@ const Navbar = (props) => {
                     </div> */}
 
                     <div className="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-primary" onClick={() => setMode('black')} >Dark</button>
-                        <button type="button" class="btn btn-primary" onClick={() => setMode('white')} >Light</button>
-                        <button type="button" class="btn btn-primary" onClick={() => setMode('red')} >Red</button>
-                        <button type="button" class="btn btn-primary" onClick={() => setMode('blue')} >Blue</button>
+                        <button type="button" className="btn btn-primary" onClick={() => setColor('black')} >Dark</button>
+                        <button type="button" className="btn btn-primary" onClick={() => setColor('white')} >Light</button>
+                        <button type="button" className="btn btn-primary" onClick={() => setColor('red')} >Red</button>
+                        <button type="button" className="btn btn-primary" onClick={() => setColor('blue')} >Blue</button>
 
                     </div>
                 </div>

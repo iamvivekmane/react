@@ -45,23 +45,25 @@ const TextForm = (props) => {
 
     return (
         <>
-            <div className="container my-3">
-                <div className="mb-3">
-                    <h1 style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>{props.heading}</h1>
-                    <textarea className="form-control" id="myBox" rows="10" style={{ backgroundColor: props.mode === 'dark' ? 'grey' : 'white' }} onChange={handleOnChange} value={text}></textarea>
+            <div className='min-vh-100' style={{ backgroundColor: props.textFormColor }}>
+                <div className="container py-3" style={{ backgroundColor: props.textFormColor }}>
+                    <div className="mb-3">
+                        <h1 style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>{props.heading}</h1>
+                        <textarea className="form-control" id="myBox" rows="10" style={{ backgroundColor: props.textFormColor }} onChange={handleOnChange} value={text}></textarea>
+                    </div>
+                    <button className="btn btn-primary" onClick={handleUpperClick}>Convert to uppercase</button>
+                    <button className="btn btn-primary mx-3" onClick={handleLowerClick}>Convert to lowercase</button>
+                    <button className="btn btn-primary mx-3" onClick={handleClearClick}>Clear text</button>
+                    <button className="btn btn-primary mx-3" onClick={handleRemoveSpaceClick}>Remove spaces</button>
                 </div>
-                <button className="btn btn-primary" onClick={handleUpperClick}>Convert to uppercase</button>
-                <button className="btn btn-primary mx-3" onClick={handleLowerClick}>Convert to lowercase</button>
-                <button className="btn btn-primary mx-3" onClick={handleClearClick}>Clear text</button>
-                <button className="btn btn-primary mx-3" onClick={handleRemoveSpaceClick}>Remove spaces</button>
-            </div>
-            <div className="container my-3" style={{ color: props.mode === 'dark' ? 'white' : '#042743' }}>
-                <h2>Your text summary</h2>
-                <p>{text.length > 0 ? text.split(" ").length : 0} words, {text.length} characters</p>
-                <p>{text.length > 0 ? 0.008 * text.split(" ").length : text.length} Minutes read</p>
-                <h2>Preview</h2>
-                <p>{text.length > 0 ? text : 'Enter some text to preview it here'}</p>
-            </div>
+                <div className="container my-3" style={{ backgroundColor: props.textFormColor }}>
+                    <h2>Your text summary</h2>
+                    <p>{text.length > 0 ? text.split(" ").length : 0} words, {text.length} characters</p>
+                    <p>{text.length > 0 ? 0.008 * text.split(" ").length : text.length} Minutes read</p>
+                    <h2>Preview</h2>
+                    <p>{text.length > 0 ? text : 'Enter some text to preview it here'}</p>
+                </div>
+            </div >
         </>
     )
 }

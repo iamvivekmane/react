@@ -13,6 +13,13 @@ function App() {
 
   const [alert, setAlert] = useState(null);
 
+  const [navbarColor, setNavbarColor] = useState('#FFFFFF')
+
+  const [textFormColor, setTextFormColor] = useState('#FFFFFF')
+
+  const [textColor, setTextColor] = useState('#000000')
+
+
   const showAlert = (Type, Message) => {
     setAlert({
       type: Type,
@@ -38,26 +45,29 @@ function App() {
 
 
 
-  const toggleMode = (mode) => {
-    // setMode(selectedMode);
-    showAlert('success', 'Dark mode has been enabled');
-    console.log("clickieeed");
-    document.body.style.backgroundColor = mode
+  const changeMode = (mode) => {
+    if (mode === 'white') {
+      setNavbarColor('#FFFFFF');
+      setTextFormColor('#FFFFFF');
+      setTextColor('#000000')
+      console.log('white');
+
+    }
+    if (mode === 'black') {
+      setNavbarColor('#042743');
+      setTextFormColor('#063354');
+      document.body.style.color = "red";
+    }
+
   }
-
-
-
-
-
-
 
 
 
   return (
     <>
-      <Navbar title="TextUtils" aboutText="About" toggleMode={toggleMode} />
+      <Navbar title="TextUtils" aboutText="About" changeMode={changeMode} navbarColor={navbarColor} textColor={textColor} />
       <Alert alert={alert} />
-      <TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} />
+      <TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} textFormColor={textFormColor} textColor={textColor} />
       {/* <About /> */}
     </>
 
