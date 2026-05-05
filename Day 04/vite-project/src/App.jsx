@@ -19,6 +19,8 @@ function App() {
 
   const [textColor, setTextColor] = useState('#000000')
 
+  const [buttonColor, setButtonColor] = useState('#1a73e8')
+
 
   const showAlert = (Type, Message) => {
     setAlert({
@@ -48,16 +50,33 @@ function App() {
   const changeMode = (mode) => {
     if (mode === 'white') {
       setNavbarColor('#FFFFFF');
-      setTextFormColor('#FFFFFF');
-      setTextColor('#000000')
-      console.log('white');
-
+      setTextFormColor('#e5e7eb');
+      setTextColor('#000000');
+      setButtonColor('#000000');
     }
     if (mode === 'black') {
+      setNavbarColor('#2d2d2d');
+      setTextFormColor('#1a1a1a');
+      setTextColor('#FFFFFF');
+      setButtonColor('#475569');
+    }
+
+    if (mode === 'red') {
+      setNavbarColor('#C0392B ');
+      setTextFormColor('#FDEDEC ');
+      setTextColor('#000000');
+      setButtonColor('#C0392B');
+    }
+
+    if (mode === 'blue') {
       setNavbarColor('#042743');
       setTextFormColor('#063354');
-      document.body.style.color = "red";
+      setTextColor('#FFFFFF');
+      setButtonColor('#0891b2');
     }
+
+
+
 
   }
 
@@ -65,9 +84,9 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextUtils" aboutText="About" changeMode={changeMode} navbarColor={navbarColor} textColor={textColor} />
+      <Navbar title="TextUtils" aboutText="About" changeMode={changeMode} navbarColor={navbarColor} textColor={textColor} buttonColor={buttonColor} />
       <Alert alert={alert} />
-      <TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} textFormColor={textFormColor} textColor={textColor} />
+      <TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} textFormColor={textFormColor} textColor={textColor} buttonColor={buttonColor} />
       {/* <About /> */}
     </>
 
