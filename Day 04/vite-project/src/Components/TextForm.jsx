@@ -46,7 +46,7 @@ const TextForm = (props) => {
     return (
         <>
             <div className='min-vh-100' style={{ backgroundColor: props.textFormColor }}>
-                <div className="container py-3" style={{ backgroundColor: props.textFormColor }}>
+                <div className="container py-2" style={{ backgroundColor: props.textFormColor }}>
                     <div className="mb-3">
                         <h1 style={{ color: props.textColor }}>{props.heading}</h1>
                         <textarea className="form-control" id="myBox" rows="10" style={{ backgroundColor: props.textFormColor }}

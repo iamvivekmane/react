@@ -83,7 +83,7 @@ function App() {
     <>
       <Router>
         <Navbar title="TextKit" aboutText="About" changeMode={changeMode} navbarColor={navbarColor} textColor={textColor} buttonColor={buttonColor} />
-        <Alert alert={alert} />
+        <Alert alert={alert} textFormColor={textFormColor} />
         <Routes>
           <Route exact path="/"
             element={<TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} textFormColor={textFormColor} textColor={textColor} buttonColor={buttonColor} />} />
