@@ -60,10 +60,10 @@ const TextForm = (props) => {
                 </div>
                 <div className="container my-3" style={{ backgroundColor: props.textFormColor }} style={{ color: props.textColor }} >
                     <h2>Your text summary</h2>
-                    <p>{text.trim("").length === 0 ? 0 : text.split(" ").length}  words, {text.trim("").length === 0 ? 0 : text.length} characters</p>
+                    <p>{text.split(" ").filter((element) => { return element.length !== 0 }).length}  words, {text.trim("").length === 0 ? 0 : text.length} characters</p>
                     <p>{text.length > 0 ? 0.008 * text.split(" ").length : text.length} Minutes read</p>
                     <h2>Preview</h2>
-                    <p>{text.length > 0 ? text : 'Enter some text to preview it here'}</p>
+                    <p>{text.split(" ").filter((element) => { return element.length != 0 }).length ? text : 'Enter some text to preview it here'}</p>
                 </div>
             </div >
         </>

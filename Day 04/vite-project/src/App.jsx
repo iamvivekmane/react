@@ -50,8 +50,7 @@ function App() {
   //   }
   // }
 
-
-
+  // Different themes of application
   const changeMode = (mode) => {
     if (mode === 'white') {
       setNavbarColor('#FFFFFF');
@@ -79,14 +78,7 @@ function App() {
       setTextColor('#FFFFFF');
       setButtonColor('#0891b2');
     }
-
-
-
-
   }
-
-
-
   return (
     <>
       <Router>
@@ -95,7 +87,7 @@ function App() {
         <Routes>
           <Route exact path="/"
             element={<TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} textFormColor={textFormColor} textColor={textColor} buttonColor={buttonColor} />} />
-          <Route exact path="/about" element={<About />} />
+          <Route exact path="/about" element={<About textFormColor={textFormColor} textColor={textColor} />} />
         </Routes>
       </Router>
     </>
