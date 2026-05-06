@@ -7,6 +7,11 @@ import Navbar from './Components/Navbar'
 import TextForm from './Components/TextForm'
 import About from './Components/About'
 import Alert from './Components/Alert'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
+
+
+
+
 function App() {
 
   const [mode, setMode] = useState('light')
@@ -84,10 +89,15 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextKit" aboutText="About" changeMode={changeMode} navbarColor={navbarColor} textColor={textColor} buttonColor={buttonColor} />
-      <Alert alert={alert} />
-      <TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} textFormColor={textFormColor} textColor={textColor} buttonColor={buttonColor} />
-      {/* <About /> */}
+      <Router>
+        <Navbar title="TextKit" aboutText="About" changeMode={changeMode} navbarColor={navbarColor} textColor={textColor} buttonColor={buttonColor} />
+        <Alert alert={alert} />
+        <Routes>
+          <Route exact path="/"
+            element={<TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} textFormColor={textFormColor} textColor={textColor} buttonColor={buttonColor} />} />
+          <Route exact path="/about" element={<About />} />
+        </Routes>
+      </Router>
     </>
 
   )
