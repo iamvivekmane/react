@@ -84,7 +84,7 @@ function App() {
 
   return (
     <>
-      <Navbar title="TextUtils" aboutText="About" changeMode={changeMode} navbarColor={navbarColor} textColor={textColor} buttonColor={buttonColor} />
+      <Navbar title="TextKit" aboutText="About" changeMode={changeMode} navbarColor={navbarColor} textColor={textColor} buttonColor={buttonColor} />
       <Alert alert={alert} />
       <TextForm heading="Enter text to analyze" mode={mode} showAlert={showAlert} textFormColor={textFormColor} textColor={textColor} buttonColor={buttonColor} />
       {/* <About /> */}
