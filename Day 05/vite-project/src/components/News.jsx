@@ -2,140 +2,27 @@ import React, { Component } from 'react'
 import NewsItem from './NewsItem'
 
 export class News extends Component {
-
-    articles = [
-        {
-            "source": {
-                "id": null,
-                "name": "Yahoo Entertainment"
-            },
-            "author": "Jasmine Andersson",
-            "title": "Hantavirus latest updates: Confirmed cases rise to 5 from Dutch cruise ship, WHO says - Yahoo",
-            "description": "Three people – a Dutch couple and a German national – have died in the outbreak on the MV Hondius. There are eight confirmed or suspected cases in total.",
-            "url": "https://www.yahoo.com/news/world/live/hantavirus-latest-updates-confirmed-cases-rise-to-5-from-dutch-cruise-ship-who-says-195033111.html",
-            "urlToImage": "https://s.yimg.com/ny/api/res/1.2/jduPI.qRdkUXT4O240gv8g--/YXBwaWQ9aGlnaGxhbmRlcjt3PTEyMDA7aD03ODU7Y2Y9d2VicA--/https://d29szjachogqwa.cloudfront.net/images/2026-05/4294e13a-2e0e-4004-867a-bbe1c54e8d8e",
-            "publishedAt": "2026-05-07T10:43:20Z",
-            "content": "People in three U.S. states are reportedly being monitored for potential hantavirus infections after traveling on a cruise ship at the center of a deadly hantavirus outbreak.\r\nThree people a Dutch co… [+2378 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "BBC News"
-            },
-            "author": "Jamie Ducharme",
-            "title": "Your heart rate is more uneven than you think. This is what it says about your health - BBC",
-            "description": "Micro-fluctuations in the time between heartbeats are proving a helpful indicator of mental health, stress levels, exercise capacity and even how well you are ageing.",
-            "url": "https://www.bbc.com/future/article/20260506-heart-rate-variability-can-say-a-lot-about-your-health-and-heres-how-to-track-it",
-            "urlToImage": "https://ychef.files.bbci.co.uk/624x351/p0njmzbk.jpg",
-            "publishedAt": "2026-05-07T09:01:17Z",
-            "content": "Artem Kirillov is not, by nature, the kind of person to take it easy. \"I prefer to push myself further, even if I feel a bit off,\" says Kirillov, who is 40, lives in London and works in health tech. … [+201 chars]"
-        },
-        {
-            "source": {
-                "id": "cnn",
-                "name": "CNN"
-            },
-            "author": "Vanessa Yurkevich, Tori B. Powell, Elise Hammond, Arpita Dasika, Laura Sharman, Jadyn Sham",
-            "title": "Live updates: Iran expected to respond Thursday to US proposal for ending war, source says - CNN",
-            "description": "The United States and Iran are working to reach an agreement to end the war. Follow for live updates.",
-            "url": "https://www.cnn.com/2026/05/07/world/live-news/trump-iran-war-news",
-            "urlToImage": "https://media.cnn.com/api/v1/images/stellar/prod/gettyimages-2274228516.jpg?c=16x9&q=w_800,c_fill",
-            "publishedAt": "2026-05-07T08:19:00Z",
-            "content": "Shell has reporteda $1.3 billion jump in profits,driven in part by wild swings in oil prices triggered by the Iran war and higher prices for gasoline and jet fuel.\r\nThe UK energy major said earnings … [+996 chars]"
-        },
-        {
-            "source": {
-                "id": "associated-press",
-                "name": "Associated Press"
-            },
-            "author": "Elaine Kurtenbach",
-            "title": "Hopes for reopening the Strait of Hormuz push world shares higher, as Brent crude holds above $100 - AP News",
-            "description": "World shares have advanced, with Tokyo's Nikkei 225 up nearly 6%. The price of Brent crude was holding above $100 a barrel early Thursday, however, as investors waited to see if the U.S. and Iran will strike a deal allowing tankers to deliver crude from the P…",
-            "url": "https://apnews.com/article/stocks-markets-rates-iran-trump-oil-44bac8b794519ae9169f968ddc9ea675",
-            "urlToImage": "https://dims.apnews.com/dims4/default/dad80b6/2147483647/strip/true/crop/7377x4915+0+1/resize/980x653!/quality/90/?url=https%3A%2F%2Fassets.apnews.com%2Fcf%2Ff5%2F70e62620b3c3c2ba61c1795eda09%2Fd995dd4e0f72484183003a838afec740",
-            "publishedAt": "2026-05-07T07:35:00Z",
-            "content": "World shares jumped on Thursday, with Tokyos Nikkei 225 gaining almost 6% to a new record as investors waited to see if the U.S. and Iran will strike a deal allowing tankers to deliver crude from the… [+3704 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Heat.com"
-            },
-            "author": "Jeff Zillgitt",
-            "title": "3 things to watch in Thunder-Lakers Game 2 - NBA",
-            "description": "The Lakers understand their playoff dilemma. They need to be near their best to win, and the defending champ Thunder do not.",
-            "url": "https://www.nba.com/news/3-things-to-watch-in-thunder-lakers-game-2",
-            "urlToImage": "https://cdn.nba.com/manage/2026/05/reaves-okc-050626-scaled.jpg",
-            "publishedAt": "2026-05-07T06:50:15Z",
-            "content": "Austin Reaves, who averaged 23.3 points during the regular season, went just 3-for-16 in Game 1.\r\n Download the NBA App\r\nThe Los Angeles Lakers understand the dilemma they face in their Western Confe… [+4227 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "CNBC"
-            },
-            "author": "Sam Meredith",
-            "title": "Shell tops profit estimates as Iran war boosts oil price, cuts share buybacks - CNBC",
-            "description": "Britain's Shell posted stronger-than-expected quarterly profit as the Iran war sent fossil fuel prices soaring.",
-            "url": "https://www.cnbc.com/2026/05/07/oil-giant-shell-tops-quarterly-profit-estimates-as-iran-war-drives-price-surge.html",
-            "urlToImage": "https://image.cnbcfm.com/api/v1/image/108298014-1777327416402-108298014-1777327273405-gettyimages-2273436703-dsc_2662_yr68lcqy.jpeg?v=1778132099&w=1920&h=1080",
-            "publishedAt": "2026-05-07T06:02:54Z",
-            "content": "The Shell gas logo is displayed at a gas station on April 27, 2026 in Austin, Texas.\r\nBritish energy major Shell on Thursday reported stronger-than-expected first-quarter profit as the Iran war sent … [+2765 chars]"
-        },
-        {
-            "source": {
-                "id": "the-washington-post",
-                "name": "The Washington Post"
-            },
-            "author": "Mohamad El Chamaa, Lior Soroka, Suzan Haidamous",
-            "title": "Israel strikes Beirut suburbs, threatening already shaky ceasefire - The Washington Post",
-            "description": "The airstrike on the Haret Hreik neighborhood targeted the leader of the Radwan forces, Hezbollah’s elite and battle-hardened fighting unit, Israeli authorities said.",
-            "url": "https://www.washingtonpost.com/world/2026/05/06/israel-hezbollah-radwan-beirut-attack-haret-hreik/",
-            "urlToImage": "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://cloudfront-us-east-1.images.arcpublishing.com/wapo/MZYEGOZYU42XQIZLK66NYWXBUM.jpg&w=1440",
-            "publishedAt": "2026-05-07T05:38:41Z",
-            "content": "BEIRUT Israeli forces launched an airstrike against a commander of Hezbollahs elite Radwan Forces in Beiruts southern suburbs Wednesday, killing at least one person, according to local officials, int… [+97 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Daily Beast"
-            },
-            "author": "Cameron Adams",
-            "title": "Stunning Reason for Trump War Plan Reversal Exposed - The Daily Beast",
-            "description": "Turns out that there’s a lot more to the president’s sudden U-turn.",
-            "url": "https://www.thedailybeast.com/stunning-reason-for-trump-war-plan-reversal-exposed/",
-            "urlToImage": "https://www.thedailybeast.com/resizer/v2/XGJDZISF3FE4FMDESXTK74IV4E.JPG?smart=true&auth=5bf091d9587139d8ea916a6150bd8cb1983ed73b56c81b78ea7b76f3c3e5578b&width=1200&height=630",
-            "publishedAt": "2026-05-07T05:14:00Z",
-            "content": "The reason for President Donald Trumps reversal of his naval mission to ensure ships could pass through the Strait of Hormuz has been revealed.\r\nTrump, 79, announced on Tuesday in a Truth Social post… [+4198 chars]"
-        },
-        {
-            "source": {
-                "id": null,
-                "name": "Minneapolis Star Tribune"
-            },
-            "author": "Chris Hine, Chris Hine",
-            "title": "Live from Game 2: Timberwolves suffer worst loss in their playoff history as San Antonio cruises to 133-95 victory - Star Tribune",
-            "description": "The best-of-seven NBA Western Conference semifinal series is tied 1-1 as the teams head to Minnesota for Game 3 on Friday.",
-            "url": "https://www.startribune.com/minnesota-timberwolves-sanantonio-spurs-nba-playoffs-live-wemby-ant-ayo-dosunmu/601833708",
-            "urlToImage": "https://arc.stimg.co/startribunemedia/AL2REAMRSVB35FP4P3W7UKE6YM.jpg?&w=1200&ar=1.91:1&fit=crop",
-            "publishedAt": "2026-05-07T05:11:34Z",
-            "content": null
-        }
-    ]
-
     constructor() {
         super();
-        console.log("Output in news");
         this.state = {
-            articles: this.articles
+            articles: []
         }
     }
+
+    async componentDidMount() {
+        let url = "https://newsapi.org/v2/top-headlines?country=us&apiKey=2b08e2763e5f47ab9c62a234e2576be2";
+        let data = await fetch(url);
+        let parsedData = await data.json();
+        console.log(parsedData);
+        this.setState({ articles: parsedData.articles })
+    }
+
     render() {
         return (
             <div className="container my-2" >
                 <h2>News: </h2>
                 <div className="row">
-                    {this.articles.map((element) => {
+                    {this.state.articles.map((element) => {
                         return <div className="col-md-4" key={element.url}>
                             <NewsItem title={element.title.slice(0, 45)} description={element.description.slice(0, 88)} imageURL={element.urlToImage} newsURL={element.url} />
                         </div>
