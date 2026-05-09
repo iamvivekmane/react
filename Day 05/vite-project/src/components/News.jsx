@@ -127,8 +127,7 @@ export class News extends Component {
         super();
         console.log("Output in news");
         this.state = {
-            articles = this.articles,
-            loading = false
+            articles: this.articles
         }
     }
     render() {
@@ -136,15 +135,12 @@ export class News extends Component {
             <div className="container my-2" >
                 <h2>News: </h2>
                 <div className="row">
-                    <div className="col-md-4">
-                        <NewsItem title={"this is title"} description={"This is description"} imageURL={"https://image.shutterstock.com/image-photo/creative-abstract-photos-different-locations-260nw-2622025849.jpg"} newsURL={'todo'} />
-                    </div>
-                    <div className="col-md-4">
-                        <NewsItem title={"this is title"} description={"This is description"} />
-                    </div>
-                    <div className="col-md-4">
-                        <NewsItem title={"this is title"} description={"This is description"} />
-                    </div>
+                    {this.articles.map((element) => {
+                        return <div className="col-md-4" key={element.url}>
+                            <NewsItem title={element.title.slice(0, 45)} description={element.description.slice(0, 88)} imageURL={element.urlToImage} newsURL={element.url} />
+                        </div>
+                    })}
+
                 </div>
             </div>
         )
