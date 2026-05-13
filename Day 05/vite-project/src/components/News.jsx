@@ -4,14 +4,27 @@ import Spinner from './Spinner';
 import PropTypes from 'prop-types'
 
 
+
+
 export class News extends Component {
-    constructor() {
-        super();
+
+    capitalize = (string) => {
+        let lowerCase = string.toLowerCase();
+        let upperCase = lowerCase.toUpperCase();
+        return upperCase[0] + lowerCase.slice(1);
+    }
+
+
+
+
+    constructor(props) {
+        super(props);
         this.state = {
             articles: [],
             page: 1,
             loading: false
         }
+        document.title = "NewsLetter : " + this.capitalize(this.props.category) + " News";
     }
 
     async updateNews() {
@@ -63,7 +76,7 @@ export class News extends Component {
     render() {
         return (
             <div className="container my-2" >
-                <h2 className='text-center'>Top headlines</h2>
+                <h2 className='text-center'>{this.props.category === 'general' ? 'Top Headlines' : this.capitalize(this.props.category) + ' News'}</h2>
                 {this.state.loading && <Spinner />}
                 <div className="row">
                     {!this.state.loading && this.state.articles.map((element) => {
