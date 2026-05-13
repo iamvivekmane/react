@@ -1,0 +1,12 @@
+The series of events that happen after mounting an react component to its unmounting is called component lifecycle
+
+
+render() : is used to render the html of the component in react.
+- This method required for a class based component to render the DOM.
+- We cannot modify the state of the component inside the render method, it is pure.
+
+componentDidMount() : runs after the component has been rendered on the DOM, fetching of data is mostly done in this method.
+
+componentDidUpdate() : it invokes as soon as the updating happens, most common use case is when we are updating the DOM in response to state or props.
+
+componentWillUnmount() : it invokes just before the component is getting unmounted or destroyed, mostly cleanups are done in this method.
