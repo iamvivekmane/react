@@ -14,10 +14,6 @@ import Spinner from './components/Spinner'
 export default class App extends Component {
   pageSize = 5;
   apiKey = import.meta.env.VITE_NEWS_API
-
-
-
-
   state = {
     progress: 0
   }
