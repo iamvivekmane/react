@@ -1,0 +1,10 @@
+Hooks    
+    - These are the features of class based components in function based components in react
+    - It allows us you to use state and other react features without writing a class
+    - These are the funtions that hook into react state and lifecycle features from function components
+
+Common hooks:
+    1. useState
+    2. useEffect
+    3. useContext
+    4. useRef
