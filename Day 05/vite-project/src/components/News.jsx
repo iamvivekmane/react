@@ -91,8 +91,10 @@ const News = (props) => {
 
 
     return (
-        <>
-            <h2 className='text-center' style={{ marginTop: '90px' }}>{props.category === 'general' ? 'Top Headlines' : capitalize(props.category) + ' News'}</h2>
+        // <>
+        <div className="div" style={{ backgroundColor: ' #0f1117', color: '#e2e8f0' }}>
+
+            <h2 className='text-center' style={{ paddingTop: '90px' }}>{props.category === 'general' ? 'Top Headlines' : capitalize(props.category) + ' News'}</h2>
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={articles.length}
@@ -117,9 +119,10 @@ const News = (props) => {
             {/* <div className="container d-flex justify-content-between">
                     <button type="button" disabled={page <= 1} className="btn btn-dark" onClick={handlePreviousClick} > &larr; Previous</button>
                     <button type="button" disabled={page + 1 > Math.ceil(totalResults / props.pageSize)} className="btn btn-dark" onClick={handleNextClick}>Next &rarr;</button>
-
-                </div> */}
-        </>
+                    
+                    </div> */}
+        //
+        </div >
     )
 }
 

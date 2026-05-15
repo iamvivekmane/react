@@ -9,11 +9,11 @@ import LoadingBar from 'react-top-loading-bar'
 import React, { Component } from 'react'
 import Navbar from './components/Navbar'
 import Spinner from './components/Spinner'
-const [progress, setProgress] = useState(0)
 
 const App = () => {
   const pageSize = 5;
   const apiKey = import.meta.env.VITE_NEWS_API
+  const [progress, setProgress] = useState(0)
   return (
     <  >
 
