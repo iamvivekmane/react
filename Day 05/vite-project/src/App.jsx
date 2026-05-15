@@ -14,16 +14,16 @@ import Spinner from './components/Spinner'
 const App = () => {
   let pageSize = 5;
   let apiKey = import.meta.env.VITE_NEWS_API
-  const [progresses, setProgresses] = useState(0)
-  setProgresses(progresses)
+  const [progress, setProgress] = useState(0)
   return (
     <  >
+
       <BrowserRouter>
         <Navbar />
         <LoadingBar
           color="#f11946"
           height={3}
-          progress={progresses}
+          progress={progress}
         />
         <Routes>
           <Route>
@@ -40,5 +40,4 @@ const App = () => {
     </ >
   )
 }
-
 export default App;
