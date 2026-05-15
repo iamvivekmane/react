@@ -1,0 +1,4 @@
+M - MongoDB - Document database
+E - ExpressJs - NodeJs web framework
+R - ReactJs - Client side JavaScript framework 
+N - NodeJs - Premier JavaScript web server
