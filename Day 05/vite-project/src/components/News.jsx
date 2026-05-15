@@ -12,7 +12,6 @@ const News = (props) => {
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(true)
     const [totalResults, setTotalResults] = useState(0)
-    // document.title = "NewsLetter : " + capitalize(props.category) + " News";
 
     const capitalize = (string) => {
         let lowerCase = string.toLowerCase();
@@ -39,6 +38,7 @@ const News = (props) => {
     }
 
     useEffect(() => {
+        document.title = "NewsLetter : " + capitalize(props.category) + " News";
         updateNews();
     }, [])
 
