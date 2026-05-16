@@ -5,8 +5,6 @@ import PropTypes from 'prop-types'
 import InfiniteScroll from 'react-infinite-scroll-component';
 import { useState } from 'react';
 
-
-
 const News = (props) => {
     const [articles, setArticles] = useState([])
     const [page, setPage] = useState(1)
@@ -19,7 +17,6 @@ const News = (props) => {
         return upperCase[0] + lowerCase.slice(1);
     }
 
-
     const updateNews = async () => {
         props.setProgress(10);
         let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=${page}&pageSize=${props.pageSize}`;
@@ -29,11 +26,9 @@ const News = (props) => {
         let parsedData = await data.json();
         props.setProgress(70);
         console.log(parsedData);
-
         setArticles(parsedData.articles)
         setTotalResults(parsedData.totalResults)
         setLoading(false)
-
         props.setProgress(100);
     }
 
@@ -41,42 +36,6 @@ const News = (props) => {
         document.title = "NewsLetter : " + capitalize(props.category) + " News";
         updateNews();
     }, [])
-
-
-
-
-    // handleNextClick = async () => {
-    //     // console.log("this is next click")
-    //     // if (!(page + 1 > Math.ceil(totalResults / props.pageSize))) {
-    //     //     let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=2b08e2763e5f47ab9c62a234e2576be2&page=${page + 1}&pageSize=${props.pageSize}`;
-    //     //     setState({ loading: true });
-    //     //     let data = await fetch(url);
-    //     //     let parsedData = await data.json();
-    //     //     setState({
-    //     //         page: page + 1,
-    //     //         articles: parsedData.articles,
-    //     //         loading: false
-    //     //     })
-    //     // }
-    //     setState({ page: page + 1 });
-    //     updateNews();
-
-    // }
-    // handlePreviousClick = async () => {
-    //     // console.log("this is previous click")
-    //     // let url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=2b08e2763e5f47ab9c62a234e2576be2&page=${page - 1}&pageSize=${props.pageSize}`;
-    //     // setState({ loading: true });
-    //     // let data = await fetch(url);
-    //     // let parsedData = await data.json();
-    //     // setState({
-    //     //     page: page - 1,
-    //     //     articles: parsedData.articles,
-    //     //     loading: false
-    //     // })
-
-    //     setState({ page: page - 1 });
-    //     updateNews();
-    // }
 
     const fetchMoreData = async () => {
         setPage(page + 1);
@@ -87,21 +46,15 @@ const News = (props) => {
         setArticles(articles.concat(parsedData.articles));
         setTotalResults(parsedData, totalResults)
     };
-
-
-
     return (
-        // <>
         <div className="div" style={{ backgroundColor: ' #0f1117', color: '#e2e8f0' }}>
-
             <h2 className='text-center' style={{ paddingTop: '90px' }}>{props.category === 'general' ? 'Top Headlines' : capitalize(props.category) + ' News'}</h2>
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={articles.length}
                 next={fetchMoreData}
                 hasMore={articles.length !== totalResults}
-                loader={<Spinner />}
-            >
+                loader={<Spinner />}>
                 <div className="container">
                     <div className="row">
                         {articles.map((element) => {
@@ -112,19 +65,7 @@ const News = (props) => {
                     </div>
                 </div>
             </InfiniteScroll>
-
-
-
-
-            {/* <div className="container d-flex justify-content-between">
-                    <button type="button" disabled={page <= 1} className="btn btn-dark" onClick={handlePreviousClick} > &larr; Previous</button>
-                    <button type="button" disabled={page + 1 > Math.ceil(totalResults / props.pageSize)} className="btn btn-dark" onClick={handleNextClick}>Next &rarr;</button>
-                    
-                    </div> */}
-        //
         </div >
     )
 }
-
-
 export default News
