@@ -49,14 +49,14 @@ const News = (props) => {
     };
     return (
 
-        <div className="div" style={{ backgroundColor: props.Mode === 'dark' ? 'black' : 'white' }}>
+        <div className="div" style={{ backgroundColor: props.Mode === 'dark' ? '#0a0f1e' : '#ffffff' }}>
             <h2 className='text-center' style={{ paddingTop: '90px', color: props.Mode === 'dark' ? 'white' : 'black' }}>{props.category === 'general' ? 'Top Headlines' : capitalize(props.category) + ' News'}</h2>
-            {loading && <Spinner />}
+            {loading && <Spinner Mode={props.Mode} />}
             <InfiniteScroll
                 dataLength={articles.length}
                 next={fetchMoreData}
                 hasMore={articles.length !== totalResults}
-                loader={<Spinner />}>
+                loader={<Spinner Mode={props.Mode} />}>
                 <div className="container">
                     <div className="row">
                         {articles.map((element) => {

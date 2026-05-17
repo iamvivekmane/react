@@ -9,9 +9,9 @@ const Navbar = (props) => {
     }
 
     return (
-        <div style={{ backgroundColor: props.Mode === 'dark' ? 'black' : 'white' }} >
-            <nav className="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
-                <div className="container-fluid " style={{ backgroundColor: props.Mode === 'dark' ? 'black' : 'white' }}>
+        <div  >
+            <nav className="navbar navbar-expand-lg fixed-top " style={{ backgroundColor: props.Mode === 'dark' ? '#070c18' : '#dce8f5', paddingTop: '1rem', paddingBottom: '1rem' }}>
+                <div className="container-fluid " style={{ backgroundColor: props.Mode === 'dark' ? '#070c18' : '#dce8f5' }}>
                     <Link className="navbar-brand" to="/" style={{ color: props.Mode === 'dark' ? 'white' : 'black' }} >NewsLetter</Link>
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
@@ -54,7 +54,7 @@ const Navbar = (props) => {
                         </form>
                     </div>
                 </div>
-            </nav>
+            </nav >
         </div >
     )
 }
