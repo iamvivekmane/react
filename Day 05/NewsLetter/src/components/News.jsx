@@ -47,7 +47,7 @@ const News = (props) => {
         setTotalResults(parsedData, totalResults)
     };
     return (
-        <div className="div" style={{ backgroundColor: ' #0f1117', color: '#e2e8f0' }}>
+        <div className="div" style={{ backgroundColor: props.contentColor, color: 'black' }}>
             <h2 className='text-center' style={{ paddingTop: '90px' }}>{props.category === 'general' ? 'Top Headlines' : capitalize(props.category) + ' News'}</h2>
             {loading && <Spinner />}
             <InfiniteScroll
