@@ -12,12 +12,10 @@ import Spinner from './components/Spinner'
 
 const App = () => {
   const [Mode, setMode] = useState('light');
-
-  const [textColor, setTextColor] = useState('black')
-
-  const [contentColor, setContentColor] = useState('white')
-
-  const [newsItemColor, setNewsItemColor] = useState('#e2e8f0')
+  const toggleMode = () => {
+    Mode === 'light' ? setMode('dark') : setMode('light')
+    console.log(Mode);
+  }
 
   const pageSize = 6;
   const apiKey = import.meta.env.VITE_NEWS_API
@@ -26,7 +24,7 @@ const App = () => {
     <  >
 
       <BrowserRouter>
-        <Navbar Mode={Mode} setMode={setMode} textColor={textColor} setTextColor={setTextColor} setContentColor={setContentColor} />
+        <Navbar Mode={Mode} toggleMode={toggleMode} />
         <LoadingBar
           color="#f11946"
           height={3}
@@ -34,13 +32,13 @@ const App = () => {
         />
         <Routes>
           <Route>
-            <Route exact path="/" element={<News contentColor={contentColor} setProgress={setProgress} apiKey={apiKey} key={'general'} pageSize={5} country={'us'} category={'general'} />} />
-            <Route exact path="/business" element={<News setProgress={setProgress} apiKey={apiKey} key={'business'} pageSize={5} country={'us'} category={'business'} />} />
-            <Route exact path="/health" element={<News setProgress={setProgress} apiKey={apiKey} key={'health'} pageSize={5} country={'us'} category={'health'} />} />
-            <Route exact path="/entertainment" element={<News setProgress={setProgress} apiKey={apiKey} key={'entertainment'} pageSize={5} country={'us'} category={'entertainment'} />} />
-            <Route exact path="/science" element={<News setProgress={setProgress} apiKey={apiKey} key={'science'} pageSize={5} country={'us'} category={'science'} />} />
-            <Route exact path="/sports" element={<News setProgress={setProgress} apiKey={apiKey} key={'sports'} pageSize={5} country={'us'} category={'sports'} />} />
-            <Route exact path="/technology" element={<News setProgress={setProgress} apiKey={apiKey} key={'technology'} pageSize={5} country={'us'} category={'technology'} />} />
+            <Route exact path="/" element={<News Mode={Mode} Mode={Mode} setProgress={setProgress} apiKey={apiKey} key={'general'} pageSize={5} country={'us'} category={'general'} />} />
+            <Route exact path="/business" element={<News Mode={Mode} setProgress={setProgress} apiKey={apiKey} key={'business'} pageSize={5} country={'us'} category={'business'} />} />
+            <Route exact path="/health" element={<News Mode={Mode} setProgress={setProgress} apiKey={apiKey} key={'health'} pageSize={5} country={'us'} category={'health'} />} />
+            <Route exact path="/entertainment" element={<News Mode={Mode} setProgress={setProgress} apiKey={apiKey} key={'entertainment'} pageSize={5} country={'us'} category={'entertainment'} />} />
+            <Route exact path="/science" element={<News Mode={Mode} setProgress={setProgress} apiKey={apiKey} key={'science'} pageSize={5} country={'us'} category={'science'} />} />
+            <Route exact path="/sports" element={<News Mode={Mode} setProgress={setProgress} apiKey={apiKey} key={'sports'} pageSize={5} country={'us'} category={'sports'} />} />
+            <Route exact path="/technology" element={<News Mode={Mode} setProgress={setProgress} apiKey={apiKey} key={'technology'} pageSize={5} country={'us'} category={'technology'} />} />
           </Route>
         </Routes>
       </BrowserRouter>

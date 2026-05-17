@@ -6,6 +6,7 @@ import InfiniteScroll from 'react-infinite-scroll-component';
 import { useState } from 'react';
 
 const News = (props) => {
+    console.log('news' + props.Mode);
     const [articles, setArticles] = useState([])
     const [page, setPage] = useState(1)
     const [loading, setLoading] = useState(true)
@@ -47,8 +48,9 @@ const News = (props) => {
         setTotalResults(parsedData, totalResults)
     };
     return (
-        <div className="div" style={{ backgroundColor: props.contentColor, color: 'black' }}>
-            <h2 className='text-center' style={{ paddingTop: '90px' }}>{props.category === 'general' ? 'Top Headlines' : capitalize(props.category) + ' News'}</h2>
+
+        <div className="div" style={{ backgroundColor: props.Mode === 'dark' ? 'black' : 'white' }}>
+            <h2 className='text-center' style={{ paddingTop: '90px', color: props.Mode === 'dark' ? 'white' : 'black' }}>{props.category === 'general' ? 'Top Headlines' : capitalize(props.category) + ' News'}</h2>
             {loading && <Spinner />}
             <InfiniteScroll
                 dataLength={articles.length}
@@ -59,7 +61,7 @@ const News = (props) => {
                     <div className="row">
                         {articles.map((element) => {
                             return <div className="col-md-4" key={element.url}>
-                                <NewsItem title={element.title} description={element.description} imageURL={element.urlToImage ? element.urlToImage : "https://img.magnific.com/free-vector/news-grunge-text_460848-9369.jpg?semt=ais_hybrid&w=740&q=80"} newsURL={element.url} author={!element.author ? "Unknown author" : element.author} date={new Date(element.publishedAt).toGMTString()} source={element.source.name} />
+                                <NewsItem Mode={props.Mode} title={element.title} description={element.description} imageURL={element.urlToImage ? element.urlToImage : "https://img.magnific.com/free-vector/news-grunge-text_460848-9369.jpg?semt=ais_hybrid&w=740&q=80"} newsURL={element.url} author={!element.author ? "Unknown author" : element.author} date={new Date(element.publishedAt).toGMTString()} source={element.source.name} />
                             </div>
                         })}
                     </div>
