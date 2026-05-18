@@ -1,0 +1,10 @@
+Hashing:
+- A hash function takes an password and convert it into a string with fixed length.
+- A hash function is irreversible
+
+Salt:
+- A salt is a random string generated per user and appended or prepended to the password before hashing.
+
+Pepper: 
+- A pepper is also a secret string appended to the password before hashing.
+- The main difference between salt and pepper is that salt is stored in the database, but pepper is not stored in the database for extra protection.
