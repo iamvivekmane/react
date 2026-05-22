@@ -4,12 +4,24 @@ import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
 import Navbar from './Components/Navbar'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './Components/Home'
+import About from './Components/About'
+
+
+
 
 function App() {
 
   return (
     <>
-      <Navbar />
+      <BrowserRouter>
+        <Navbar />
+        <Routes>
+          <Route exact path="/Home" element={<Home />} />
+          <Route exact path="/About" element={<About />} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
