@@ -1,0 +1,9 @@
+Context API:
+- It is an built in feature to share data globally across a component tree without manually passing props through components at every level.
+- It is used to avoid prop drilling which increases complexity of app.
+
+createContext():
+- It is used to create context it can take an optional default value.
+
+useContext():
+- A hook that is used in functional components to read the data from the nearest provider above it in the tree.
