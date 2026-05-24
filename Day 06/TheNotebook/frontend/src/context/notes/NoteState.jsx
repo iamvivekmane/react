@@ -17,6 +17,20 @@ const noteState = (props) => {
             })
         }, 1000);
     }
+    import { useLocation } from "react-router-dom";
+
+    function MyComponent() {
+        const location = useLocation();
+
+        console.log(location.pathname);
+
+        const query = new URLSearchParams(location.search);
+        const userId = query.get("id");
+
+        const fromPage = location.state?.from || "Unknown";
+
+        return <div>Current Path: {location.pathname}</div>;
+    }
 
     return (
         <NoteContext.Provider value={{ state, update }}>
