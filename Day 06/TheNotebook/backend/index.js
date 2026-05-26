@@ -1,7 +1,6 @@
 const connectToMongo = require('./db')
 const express = require('express')
 
-
 connectToMongo()
 const app = express()
 const port = 5000
@@ -19,5 +18,5 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`)
+    console.log(`TheNotebook app backend listening on port ${port}`)
 })

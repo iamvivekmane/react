@@ -1,39 +1,41 @@
 import React, { useState } from "react";
 import NoteContext from "./noteContext";
 
-
 const noteState = (props) => {
-    const s1 = {
-        "name": "vivek",
-        "class": "10th"
-    }
-    const [state, setstate] = useState(s1);
-    const update = () => {
-        console.log("Update called")
-        setTimeout(() => {
-            setstate({
-                "name": "shubham",
-                "class": "11th"
-            })
-        }, 1000);
-    }
-    import { useLocation } from "react-router-dom";
 
-    function MyComponent() {
-        const location = useLocation();
+    const notesInitial = [
+        {
+            "_id": "6a1592220db406967580d4b3",
+            "user": "6a0c8c62baa91e46e96a90e9",
+            "title": "Gym",
+            "description": "Hit Chest",
+            "tag": "imp",
+            "date": "2026-05-26T12:29:22.215Z",
+            "__v": 0
+        },
+        {
+            "_id": "6a1592370db406967580d4b4",
+            "user": "6a0c8c62baa91e46e96a90e9",
+            "title": "Dier",
+            "description": "Eat clean",
+            "tag": "med",
+            "date": "2026-05-26T12:29:43.043Z",
+            "__v": 0
+        },
+        {
+            "_id": "6a15924c0db406967580d4b5",
+            "user": "6a0c8c62baa91e46e96a90e9",
+            "title": "Class",
+            "description": "Complete assignments",
+            "tag": "high",
+            "date": "2026-05-26T12:30:04.218Z",
+            "__v": 0
+        }
+    ]
 
-        console.log(location.pathname);
-
-        const query = new URLSearchParams(location.search);
-        const userId = query.get("id");
-
-        const fromPage = location.state?.from || "Unknown";
-
-        return <div>Current Path: {location.pathname}</div>;
-    }
-
+    const [notes, setNotes] = useState(notesInitial)
     return (
-        <NoteContext.Provider value={{ state, update }}>
+        <NoteContext.Provider value={{ notes, setNotes }}>
             {props.children}
         </NoteContext.Provider>
 
