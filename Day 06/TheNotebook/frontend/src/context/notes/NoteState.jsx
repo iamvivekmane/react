@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import NoteContext from "./noteContext";
+import { createLogger } from "vite";
 
 const noteState = (props) => {
 
@@ -84,9 +85,6 @@ const noteState = (props) => {
             "__v": 0
         };
         setNotes(notes.concat(note))
-
-
-
     }
 
 
@@ -96,8 +94,11 @@ const noteState = (props) => {
     }
 
     //  Delete a note 
-    const deleteNote = () => {
-
+    const deleteNote = (id) => {
+        console.log("Deleting a note")
+        const newNote = notes.filter((note) => { return note._id !== id })
+        setNotes(newNote);
+        console.log("deleted")
     }
 
 

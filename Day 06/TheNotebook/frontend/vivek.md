@@ -1,0 +1,81 @@
+<h1 align="center">Hello there👋, I'm Vivek</h1>
+<h3 align="center">Frontend Developer </h3>
+
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=iamvivekmane&label=Profile%20views&color=0e75b6&style=flat" alt="iamvivekmane" /> </p>
+
+I’m currently working on [**React**](https://github.com/iamvivekmane/react)
+
+<h3 align="center"> My projects and Technology Landscape </h3>
+
+| Domain             | Skills/Tools | Projects                                                                                                                                                                                                                                          |
+| ------------------ | ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **React Projects** | React        | - [Text Utility application](https://github.com/iamvivekmane/text-utils)<br>- [AWS Serverless CRUD API](https://github.com/iamtejasmane/aws-serverless-crud-api)<br>- [The Amazon ECS Handbook](https://github.com/iamtejasmane/aws-ecs-handbook) |
+| **Orchestration** | - Kubernetes<br>- AWS ECS | - [Kubernetes](https://github.com/iamtejasmane/kubernetes)<br> - [Amazon EKS - Building a Cloud Native Application](https://github.com/iamtejasmane/aws-eks-web-app-hosting) |
+| **Infrastructure as Code** | Terraform | - [AWS ECS Farget deployment using Terraform](https://github.com/iamtejasmane/ecs-farget-microservices-deployment-terraform)<br>- [Terraform Micro Modules](https://github.com/iamtejasmane/aws-terraform-projects)<br>- [Terraform](https://github.com/iamtejasmane/terraform) |
+| **Server Templating** | Docker | - Docker |
+| **CI/CD** | - AWS CodePipeline, CodeBuild, CodeDeploy.<br> - Jenkins<br> - Github Actions<br> | - [AWS CodePipeline Projects](https://github.com/iamtejasmane/aws-code-pipeline-repo)<br>- [Jenkins sample app deployment](https://github.com/iamtejasmane/jenkins)<br>- [Github Actions](https://github.com/iamtejasmane/ecs-farget-microservices-deployment-terraform/actions) |
+| **Programming Languages** | - JavaScript<br>- Golang<br>- Python<br>- C++ | - [Go Projects](https://github.com/iamtejasmane/go-projects)<br>- NodeJS Full-Stack Web Development Projects<br>- [100+ Leetcode Problems](https://leetcode.com/iamtejas/)<br>- [Python 1-Month Challenge](https://github.com/iamtejasmane/python-1month-code)<br>- [C++](https://github.com/iamtejasmane/cpp) |
+| **Monitoring** | Prometheus, Grafana, CloudWatch | - [AWS-ECS Prometheus Monitoring. Integration of NodeExporter, cAdvisior, Alertmanager and Grafana Dashboards.](https://github.com/iamtejasmane/prometheus-monitoring) |
+| **Scripting** | - Bash/Shell<br>- Python | - [Python Jenkins Automation Scripts](https://github.com/iamtejasmane/devops-automation-scripts/tree/main/jenkins)<br>- [Shell Scripts - Prometheus, Altermanager installation.](https://github.com/iamtejasmane/prometheus-monitoring/tree/main/scripts) |
+| **SCM** | GitHub, Gitlab, CodeCommit | - [Gitlab Profile](https://gitlab.com/tejasmane485)<br>- [AWS CodeCommit Commands Handbook on Gitlab](https://gitlab.com/cicd9353734/aws-codecommit) |
+| **Configuration Management** | Ansible | \_ |
+| **Servers** | Nginx, Apache | [Nginx](https://github.com/iamtejasmane/aws-three-tier-web-app/blob/9cb39e652ce853908084a81ffe31815688f8d41b/application-code/nginx.conf) |
+| **Service Mesh** | - Istio _(In Progress)_ | |
+| **Databases** | - MySQL, DynamoDB, RDS | - [MySQL- Sequelize](https://github.com/iamtejasmane/ecs-farget-microservices-deployment-terraform/blob/main/backend/cab-assignment-app/db/db.js)<br>- [AWS DynamoDB](https://github.com/iamtejasmane/aws-serverless-crud-api#step1-create-a-dynamodb-table)<br>- [AWS RDS Multi-AZ](https://github.com/iamtejasmane/aws-three-tier-web-app#database-deployment---part-2) |
+| |
+
+- 💬 Ask me about **AWS, Kubernetes, Terraform, and CI/CD.**
+
+- 📫 How to reach me **tejasmane485@gmail.com**
+
+- 👯 I’m looking to collaborate on **AWS and Kubernetes.**
+
+- ⚡ Fact about me: **Troubleshooting is my secret weapon. If there's an invisible bug or issue, I've got my detective hat on. Just like what's there in 221B Baker Street.**
+
+### 🏆 Certifications
+
+<div align="left">
+<a href="https://www.credly.com/badges/2338dfc9-4704-4c00-be62-91460d192b09?source=linked_in_profile" title="AWS Certified Developer Associate">
+  <img src="https://images.credly.com/size/340x340/images/b9feab85-1a43-4f6c-99a5-631b88d5461b/image.png" alt="AWS Certified Developer Associate" width="80" height="80" />
+</a>
+<a href="https://www.credly.com/badges/c17a678a-a0a2-489f-b582-c8cda4fd437c" title="AWS Certified Solutions Architect – Associate">
+  <img src="https://images.credly.com/size/340x340/images/0e284c3f-5164-4b21-8660-0d84737941bc/image.png" alt="AWS Certified Solutions Architect – Associate" width="80" height="80" />
+</a>
+<a href="https://www.credly.com/badges/ea80d958-a172-4817-bce1-3be6b0879b98" title="CKA: Certified Kubernetes Administrator">
+  <img src="https://images.credly.com/size/340x340/images/8b8ed108-e77d-4396-ac59-2504583b9d54/cka_from_cncfsite__281_29.png" alt="CKA: Certified Kubernetes Administrator" width="80" height="80" />
+</a>
+<a href="https://www.credly.com/badges/179ce107-b6be-4d69-8dbd-5f59dba83be6" title="
+HashiCorp Certified: Terraform Associate">
+  <img src="https://images.credly.com/size/340x340/images/99289602-861e-4929-8277-773e63a2fa6f/image.png" alt="HashiCorp Certified: Terraform Associate" width="80" height="80" />
+</a>
+</div>
+
+### My Recent Blogs posts
+
+<!-- BLOG-POST-LIST:START -->
+
+- [When Terraform Tries to Delete What You Only Wanted to Update](https://medium.com/@tejasmane485/when-terraform-tries-to-delete-what-you-only-wanted-to-update-50e5a6d30914?source=rss-cc9ef120f3a4------2)
+- [How to Set Up Environment Variables in a CodeBuild Project for Later Use](https://medium.com/@tejasmane485/how-to-set-up-environment-variables-in-a-codebuild-project-for-later-use-2033369ae745?source=rss-cc9ef120f3a4------2)
+- [AWS Bastion Host: Secure Remote Access to Your Private Instances](https://medium.com/@tejasmane485/aws-bastion-host-secure-remote-access-to-your-private-instances-7012a5a74fb3?source=rss-cc9ef120f3a4------2)
+- [Securing Connectivity with TLS Certificates and Configuring Secure SSH and Web Servers](https://medium.com/@tejasmane485/securing-connectivity-with-tls-certificates-and-configuring-secure-ssh-and-web-servers-b3bee617a247?source=rss-cc9ef120f3a4------2)
+- [Clear AWS Certifications in 2023: Your comprehensive Step-by-Step Guide](https://medium.com/@tejasmane485/clear-aws-certifications-in-2023-your-comprehensive-step-by-step-guide-be66ea3d6884?source=rss-cc9ef120f3a4------2)
+<!-- BLOG-POST-LIST:END -->
+
+<p align="left"> <a href="https://twitter.com/_tejasmane" target="blank"><img src="https://img.shields.io/twitter/follow/_tejasmane?logo=twitter&style=for-the-badge" alt="_tejasmane" /></a> </p>
+
+<h3 align="left">Connect with me:</h3>
+<p align="left">
+<a href="https://twitter.com/_tejasmane" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/twitter.svg" alt="_tejasmane" height="30" width="40" /></a>
+<a href="https://medium.com/@tejasmane485" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/medium.svg" alt="@tejasmane485" height="30" width="40" /></a>
+<a href="https://www.leetcode.com/iamtejas" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/leet-code.svg" alt="iamtejas" height="30" width="40" /></a>
+<a href="/https://medium.com/feed/@tejasmane485" target="blank"><img align="center" src="https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/rss.svg" alt="https://medium.com/feed/@tejasmane485" height="30" width="40" /></a>
+</p>
+
+<h3 align="left">Languages and Tools:</h3>
+<p align="left"> <a href="https://aws.amazon.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/amazonwebservices/amazonwebservices-original-wordmark.svg" alt="aws" width="40" height="40"/> </a> <a href="https://www.gnu.org/software/bash/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-icon.svg" alt="bash" width="40" height="40"/> </a> <a href="https://www.w3schools.com/cpp/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/cplusplus/cplusplus-original.svg" alt="cplusplus" width="40" height="40"/> </a> <a href="https://www.cypress.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/simple-icons/simple-icons/6e46ec1fc23b60c8fd0d2f2ff46db82e16dbd75f/icons/cypress.svg" alt="cypress" width="40" height="40"/> </a> <a href="https://www.docker.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg" alt="docker" width="40" height="40"/> </a> <a href="https://expressjs.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/express/express-original-wordmark.svg" alt="express" width="40" height="40"/> </a> <a href="https://git-scm.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/> </a> <a href="https://golang.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/go/go-original.svg" alt="go" width="40" height="40"/> </a> <a href="https://grafana.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/grafana/grafana-icon.svg" alt="grafana" width="40" height="40"/> </a> <a href="https://graphql.org" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/graphql/graphql-icon.svg" alt="graphql" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://www.jenkins.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/jenkins/jenkins-icon.svg" alt="jenkins" width="40" height="40"/> </a> <a href="https://kubernetes.io" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/kubernetes/kubernetes-icon.svg" alt="kubernetes" width="40" height="40"/> </a> <a href="https://www.linux.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/linux/linux-original.svg" alt="linux" width="40" height="40"/> </a> <a href="https://www.mongodb.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/> </a> <a href="https://www.mysql.com/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/> </a> <a href="https://www.nginx.com" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nginx/nginx-original.svg" alt="nginx" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://postman.com" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="40" height="40"/> </a> <a href="https://www.python.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> <a href="https://redis.io" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/redis/redis-original-wordmark.svg" alt="redis" width="40" height="40"/> </a> </p>
+
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs?username=iamtejasmane&show_icons=true&locale=en&layout=compact" alt="iamtejasmane" /></p>
+
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=iamtejasmane&show_icons=true&locale=en" alt="iamtejasmane" /></p>
+
+<p><img align="center" src="https://github-readme-streak-stats.herokuapp.com/?user=iamtejasmane&" alt="iamtejasmane" /></p>
