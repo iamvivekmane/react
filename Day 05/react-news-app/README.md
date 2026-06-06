@@ -1,16 +1,103 @@
-# React + Vite
+# 📰 react-news-app
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive React news aggregator powered by [NewsAPI.org](https://newsapi.org/) that delivers top headlines across multiple categories with infinite scroll and dark mode support.
 
-Currently, two official plugins are available:
+> ⚠️ **Localhost only** — NewsAPI's free plan restricts API calls to `localhost`. This app will not work when deployed to a live server without upgrading to a paid NewsAPI plan.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📸 Preview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+<!-- Replace with an actual screenshot of your app -->
 
-## Expanding the ESLint configuration
+![react-news-app preview](./preview.png)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## ✨ Features
+
+- 🗞️ **Top Headlines** — Real-time news from trusted sources via NewsAPI.org
+- 📂 **Category Filter** — Browse by Home, Business, Entertainment, Health, Science, Sports, and Technology
+- ♾️ **Infinite Scroll** — Seamlessly load more articles as you scroll down
+- 🌙 **Dark Mode** — Toggle between light and dark themes
+- 📱 **Responsive Design** — Works across desktop, tablet, and mobile screens
+
+---
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) v16 or higher
+- npm or yarn
+
+### Installation
+
+```bash
+# 1. Clone the repository
+git clone https://github.com/your-username/react-news-app.git
+
+# 2. Move into the project folder
+cd react-news-app
+
+# 3. Install dependencies
+npm install
+```
+
+### Environment Variables
+
+Create a `.env` file in the root of the project:
+
+```env
+VITE_NEWS_API_KEY=your_newsapi_key_here
+```
+
+> Get your free API key at [https://newsapi.org/register](https://newsapi.org/register).  
+> Never commit your `.env` file — it is already listed in `.gitignore`.
+
+### Run the App
+
+```bash
+npm run dev
+```
+
+Open your browser and go to **http://localhost:5173**
+
+---
+
+## ⚠️ API Limitation
+
+This project uses the **NewsAPI.org free plan**, which has the following restriction:
+
+> Requests are only allowed from `localhost`. Any deployment to a public domain (Vercel, Netlify, GitHub Pages, etc.) will return a **426 error** or blocked response.
+
+To make this app publicly deployable, you must upgrade to a [NewsAPI paid plan](https://newsapi.org/pricing).
+
+---
+
+## 📁 Project Structure
+
+```
+react-news-app/
+├── public/
+│   └── vite.svg
+├── src/
+│   ├── components/        # Navbar, NewsCard, Spinner, etc.
+│   ├── App.jsx            # Root component with routing & state
+│   └── main.jsx           # App entry point
+├── .env                   # API key (not committed)
+├── .gitignore
+├── index.html
+├── package.json
+└── README.md
+```
+
+---
+
+## 🛠️ Tech Stack
+
+| Tech                                | Purpose              |
+| ----------------------------------- | -------------------- |
+| [React](https://react.dev/)         | UI framework         |
+| [Vite](https://vitejs.dev/)         | Dev server & bundler |
+| [NewsAPI.org](https://newsapi.org/) | News data source     |
