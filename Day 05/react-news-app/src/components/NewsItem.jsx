@@ -13,7 +13,7 @@ const NewsItem = (props) => {
         </div>
         <img style={{ width: '100%', height: '200px', objectFit: 'cover' }} src={imageURL} className="card-img-top" alt="..." />
         <div className="card-body" style={{ backgroundColor: props.Mode === 'dark' ? '#111827' : '#ffffff' }}>
-          <h5 className="card-title" style={{ color: props.Mode === 'dark' ? 'white' : 'black' }}>{title ? title.slice(10) : title}...</h5>
+          <h5 className="card-title" style={{ color: props.Mode === 'dark' ? 'white' : 'black' }}> {title ? title.slice(0,60) : title}...</h5>
           <p className="card-text" style={{ color: props.Mode === 'dark' ? 'white' : 'black' }} ><small className="tex-body-secondary" style={{ color: props.Mode === 'dark' ? 'white' : 'black' }}>By {author} on {date}</small></p>
           <p className="card-text" style={{ color: props.Mode === 'dark' ? 'white' : 'black' }}> {description ? description.slice(20) : description}...</p>
           <a href={newsURL} style={{ position: 'absolute', bottom: '10px' }} target='_blank' className="btn btn-sm btn-dark">Read more</a>
