@@ -35,10 +35,10 @@ A responsive React news aggregator powered by [NewsAPI.org](https://newsapi.org/
 
 ```bash
 # 1. Clone the repository
-git clone https://github.com/your-username/react-news-app.git
+git clone https://github.com/iamvivekmane/react-learning.git
 
 # 2. Move into the project folder
-cd react-news-app
+cd "Day 05/react-news-app"
 
 # 3. Install dependencies
 npm install
