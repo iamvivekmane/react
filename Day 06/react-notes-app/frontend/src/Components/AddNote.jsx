@@ -6,12 +6,12 @@ const AddNote = () => {
     const { addNote } = context;
     const [note, setNote] = useState({ title: "", description: "", tag: "default" })
     const handleClick = (e) => {
-        console.log("handleCLick called")
+
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
     }
     const onChange = (e) => {
-        console.log("On change is called")
+
         setNote({ ...note, [e.target.name]: e.target.value })
     }
     return (

@@ -18,7 +18,6 @@ const noteState = (props) => {
             }
         });
         const json1 = await response.json();
-        console.log(json1.notes)
         setNotes(json1.notes);
     }
 
@@ -33,7 +32,6 @@ const noteState = (props) => {
 
     //  Add a note 
     const addNote = async (title, description, tag) => {
-        console.log("Adding a new note")
         const response = await fetch(`${host}/api/notes/addnote`, {
             method: 'POST',
             headers: {
@@ -42,7 +40,6 @@ const noteState = (props) => {
             },
             body: JSON.stringify({ title, description, tag })
         });
-        console.log("success")
         // const json = response.json();
 
 
@@ -59,33 +56,34 @@ const noteState = (props) => {
     }
 
     //  Edit a note 
-    const editNote = async () => {
+    const editNote = async (id, title, description, tag) => {
 
         const response = await fetch(`${host}/api/notes/updatenote/${id}`, {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',
                 'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNmEwYzhjNjJiYWE5MWU0NmU5NmE5MGU5In0sImlhdCI6MTc3OTIwNzU0OH0.LpIaza4eR2A6WRySWP2V0e-pLjuiFSkcU8eh2KL1DTw'
             },
             body: JSON.stringify({ title, description, tag })
         });
-        const json = response.json();
-        console.log("success")
+        const json = await response.json();
 
-        for (let index = 0; index < notes.length; index++) {
+        const newNotes = JSON.parse(JSON.stringify(notes))
+
+        for (let index = 0; index < newNotes.length; index++) {
             const element = notes[index];
-            if (id == element._id) {
-                element.name = name;
-                element.description = description;
-                element.tag = tag;
+            if (element._id === id) {
+                newNotes[index].title = title;
+                newNotes[index].description = description;
+                newNotes[index].tag = tag;
+                break;
             }
         }
-
+        setNotes(newNotes)
     }
 
     //  Delete a note 
     const deleteNote = async (id) => {
-        console.log("1");
         const response = await fetch(`${host}/api/notes/deletenote/${id}`, {
             method: 'DELETE',
             headers: {
@@ -94,11 +92,8 @@ const noteState = (props) => {
             },
         });
         const json = response.json();
-        console.log(json)
-        console.log("Deleting a note")
         const newNote = notes.filter((note) => { return note._id !== id })
         setNotes(newNote);
-        console.log("deleted")
     }
 
 
