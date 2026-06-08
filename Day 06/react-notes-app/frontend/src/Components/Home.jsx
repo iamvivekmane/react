@@ -6,7 +6,6 @@ import AddNote from './AddNote';
 const Home = () => {
     return (
         <div>
-
             <Notes />
         </div >
     )
