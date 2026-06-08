@@ -49,7 +49,7 @@ const TextForm = (props) => {
                 <div className="container">
                     <div className="mb-3">
                         <h1 style={{ color: props.textColor }}>{props.heading}</h1>
-                        <textarea className="form-control" id="myBox" rows="8" style={{ backgroundColor: props.textFormColor }}
+                        <textarea className="form-control" id="myBox" rows="8" style={{ backgroundColor: props.textFormColor, color: props.textColor }}
                             onChange={handleOnChange} value={text}></textarea>
                     </div>
                     <button disabled={text.length === 0} className="btn btn-primary" style={{ backgroundColor: props.buttonColor }}
