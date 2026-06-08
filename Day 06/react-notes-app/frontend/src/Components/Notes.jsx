@@ -8,18 +8,19 @@ const Notes = () => {
     useEffect(() => {
         getNotes();
     }, [])
-    const [note, setNote] = useState({ etitle: "", edescription: "", etag: "" })
+    const [note, setNote] = useState({ id: "", etitle: "", edescription: "", etag: "" })
 
     const ref = useRef(null)
+    const refClose = useRef(null)
 
     const updateNote = (currentNote) => {
         ref.current.click();
-        setNote({ etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag });
+        setNote({ id: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag });
     }
 
     const handleClick = (e) => {
         console.log("handleCLick called", note)
-        e.preventDefault();
+        refClose.current.click();
     }
 
     const onChange = (e) => {
@@ -55,7 +56,7 @@ const Notes = () => {
                             </form>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button ref={refClose} type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                             <button type="button" class="btn btn-primary" onClick={handleClick}>Update note</button>
                         </div>
                     </div>
