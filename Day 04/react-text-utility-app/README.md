@@ -1,16 +1,45 @@
-# React + Vite
+# react-text-utility-app ✍️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A simple yet powerful text utility web app built with React. Analyze, transform, and preview your text in real time.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- 🔠 **Convert to Uppercase** — Transform all text to uppercase
+- 🔡 **Convert to Lowercase** — Transform all text to lowercase
+- 🧹 **Clear Text** — Instantly clear the text area
+- 📏 **Remove Extra Spaces** — Strip unnecessary whitespace
+- 📊 **Word & Character Count** — Live count of words and characters
+- ⏱️ **Read Time Estimate** — Estimated minutes to read your text
+- 👁️ **Live Preview** — See your transformed text in real time
+- 🎨 **Theme Switcher** — Switch between Dark, Light, Red, and Blue themes
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installation
 
-## Expanding the ESLint configuration
+```bash
+# Clone the repository
+git clone https://github.com/iamvivekmane/react-learning.git
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Navigate to the project folder
+cd "Day 04/react-text-utility-app"
+
+# Install dependencies
+npm install
+
+# Start the development server
+npm run dev
+
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser.
+
+## Tech Stack
+
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [Bootstrap](https://getbootstrap.com/)
+
+## Live Demo
+
+🔗 [text-utility-react-seven.vercel.app](https://text-utility-react-seven.vercel.app)
