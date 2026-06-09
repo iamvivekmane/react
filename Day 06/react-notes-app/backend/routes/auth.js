@@ -9,8 +9,8 @@ const fetchuser = require('../middleware/fetchuser')
 
 
 // Route 1
-// Creating a user using POST : api/auth/createUser : No login required
-router.post('/createuser', [
+// Creating a user using POST : api/auth/signup : No login required
+router.post('/signup', [
     body('email', 'email is not valid').isEmail(),
     body('name', 'name is not valid').isLength({ min: 3 }),
     body('password', 'password must be atleast 5 characters').isLength({ min: 5 }),
