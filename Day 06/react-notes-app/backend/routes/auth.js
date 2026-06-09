@@ -21,7 +21,7 @@ router.post('/signup', [
     // If there are errors return bad request and the errors
     const result = validationResult(req);
     if (!result.isEmpty()) {
-        return res.send(`Hello, ${req.query.person}!`);
+        return res.send(success, `Hello, ${req.query.person}!`);
     }
 
 
