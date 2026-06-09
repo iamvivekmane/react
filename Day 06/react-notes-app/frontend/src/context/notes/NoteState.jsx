@@ -17,8 +17,8 @@ const noteState = (props) => {
                 'auth-token': 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNmEwYzhjNjJiYWE5MWU0NmU5NmE5MGU5In0sImlhdCI6MTc3OTIwNzU0OH0.LpIaza4eR2A6WRySWP2V0e-pLjuiFSkcU8eh2KL1DTw'
             }
         });
-        const json1 = await response.json();
-        setNotes(json1.notes);
+        const json = await response.json();
+        setNotes(json.notes);
     }
 
 
