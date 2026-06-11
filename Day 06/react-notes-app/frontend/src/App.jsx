@@ -9,7 +9,20 @@ import Alert from './Components/Alert'
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 
+// Function to show custom alerts based on action
+const showAlert = (Type, Message) => {
+  setAlert({
+    type: Type,
+    message: Message
+  })
+  setTimeout(() => {
+    setAlert(null);
+  }, 2000);
+}
+
+
 function App() {
+  const [alert, setAlert] = useState(null)
   return (
     <>
       <NoteState>
