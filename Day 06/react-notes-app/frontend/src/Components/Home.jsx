@@ -3,10 +3,10 @@ import NoteContext from "../context/notes/noteContext"
 import Notes from './Notes';
 import AddNote from './AddNote';
 
-const Home = () => {
+const Home = (props) => {
     return (
         <div>
-            <Notes />
+            <Notes showAlert={props.showAlert} />
         </div >
     )
 }

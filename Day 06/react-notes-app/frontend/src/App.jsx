@@ -9,32 +9,33 @@ import Alert from './Components/Alert'
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 
-// Function to show custom alerts based on action
-const showAlert = (Type, Message) => {
-  setAlert({
-    type: Type,
-    message: Message
-  })
-  setTimeout(() => {
-    setAlert(null);
-  }, 2000);
-}
+
+
 
 
 function App() {
   const [alert, setAlert] = useState(null)
+  const showAlert = (Type, Message) => {
+    setAlert({
+      type: Type,
+      message: Message
+    })
+    setTimeout(() => {
+      setAlert(null);
+    }, 2000);
+  }
   return (
     <>
       <NoteState>
         <BrowserRouter>
           <Navbar />
-          {/* <Alert message="This is amazing react course" /> */}
+          <Alert alert={alert} />
           <div className="container">
             <Routes>
-              <Route exact path="/Home" element={<Home />} />
-              <Route exact path="/About" element={<About />} />
-              <Route exact path="/Login" element={<Login />} />
-              <Route exact path="/Signup" element={<Signup />} />
+              <Route exact path="/Home" element={<Home showAlert={showAlert} />} />
+              <Route exact path="/About" element={<About showAlert={showAlert} />} />
+              <Route exact path="/Login" element={<Login showAlert={showAlert} />} />
+              <Route exact path="/Signup" element={<Signup showAlert={showAlert} />} />
             </Routes>
           </div>
         </BrowserRouter>

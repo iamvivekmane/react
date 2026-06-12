@@ -83,6 +83,7 @@ const noteState = (props) => {
         const json = response.json();
         const newNote = notes.filter((note) => { return note._id !== id })
         setNotes(newNote);
+        // props.showAlert("success", "Deleted successfully")
     }
 
 

@@ -3,7 +3,7 @@ import NoteContext from "../context/notes/noteContext"
 import Noteitem from './Noteitem';
 import AddNote from './addNote';
 
-const Notes = () => {
+const Notes = (props) => {
     const context = useContext(NoteContext);
     const { notes, getNotes, editNote } = context;
     useEffect(() => {
@@ -73,7 +73,7 @@ const Notes = () => {
                     {notes.length === 0 && 'No notes to display'}
                 </div>
                 {notes.map((note) => {
-                    return <Noteitem key={note._id} note={note} updateNote={updateNote} />;
+                    return <Noteitem showAlert={props.showAlert} key={note._id} note={note} updateNote={updateNote} />;
                 })}
             </div>
         </>
