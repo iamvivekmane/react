@@ -8,8 +8,9 @@ const AddNote = (props) => {
     const handleClick = (e) => {
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
-        console.log("clicking")
         setNote({ title: "", description: "", tag: "" })
+        console.log("it is getting clicked")
+        props.showAlert("success", "Note added successfully")
     }
     const onChange = (e) => {
         setNote({ ...note, [e.target.name]: e.target.value })

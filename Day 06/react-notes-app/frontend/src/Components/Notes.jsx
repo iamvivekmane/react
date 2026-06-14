@@ -25,6 +25,7 @@ const Notes = (props) => {
         editNote(note.eid, note.etitle, note.edescription, note.etag)
         e.target.blur();
         refClose.current.click();
+        props.showAlert("success", "Note updated successfully")
     }
 
     const onChange = (e) => {
@@ -65,8 +66,8 @@ const Notes = (props) => {
                         </div>
                     </div>
                 </div>
-            </div>
-            <AddNote />
+            </div >
+            <AddNote showAlert={props.showAlert} />
             <div className="row my-3">
                 <h2>Your notes</h2>
                 <div className="container my-3">
