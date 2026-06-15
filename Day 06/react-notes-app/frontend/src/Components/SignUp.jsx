@@ -34,7 +34,11 @@ const Signup = (props) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
     return (
+
         <form onSubmit={handleSubmit} >
+            <div className="heading d-flex justify-content-center align-items-center">
+                <h1 className='center'>Signup</h1>
+            </div>
             <div className="mb-3" >
                 <label htmlFor="name" className="form-label">Name</label>
                 <input type="name" className="form-control" id="name" name="name" aria-describedby="emailHelp" value={credentials.name} onChange={onChange} required />
