@@ -32,6 +32,9 @@ const Login = (props) => {
     }
     return (
         <form onSubmit={handleSubmit} >
+            <div className="heading d-flex justify-content-center align-items-center">
+                <h1 className='center'>Login</h1>
+            </div>
             <div className="mb-3" >
                 <label htmlFor="email" className="form-label">Email</label>
                 <input type="email" className="form-control" id="email" name="email" aria-describedby="emailHelp" value={credentials.email} onChange={onChange} />
