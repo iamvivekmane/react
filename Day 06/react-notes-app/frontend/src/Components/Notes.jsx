@@ -5,9 +5,13 @@ import AddNote from './addNote';
 import { useNavigate } from 'react-router-dom';
 
 const Notes = (props) => {
+    const navigate = useNavigate();
     const context = useContext(NoteContext);
     const { notes, getNotes, editNote } = context;
-    const navigate = useNavigate();
+    const [note, setNote] = useState({ eid: "", etitle: "", edescription: "", etag: "" })
+    const ref = useRef(null)
+    const refClose = useRef(null)
+
     useEffect(() => {
         if (localStorage.getItem('token')) {
             getNotes();
@@ -18,10 +22,7 @@ const Notes = (props) => {
     }, [])
 
 
-    const [note, setNote] = useState({ eid: "", etitle: "", edescription: "", etag: "" })
 
-    const ref = useRef(null)
-    const refClose = useRef(null)
 
     const updateNote = (currentNote) => {
         ref.current.click();

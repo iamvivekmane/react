@@ -2,11 +2,6 @@ import React, { useContext, useEffect, useEffectEvent } from 'react'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    // let location = useLocation()
-    // useEffect is for demonstration 
-    // useEffect(() => {
-    //     console.log(location.pathname)
-    // }, [location]);
     const navigate = useNavigate();
     const handleLogout = () => {
         console.log("called")

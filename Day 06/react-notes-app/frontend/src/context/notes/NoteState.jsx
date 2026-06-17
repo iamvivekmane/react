@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import NoteContext from "./noteContext";
 
 const noteState = (props) => {
+
     const host = "http://localhost:5000"
 
     const notesInitial = []
@@ -20,6 +21,7 @@ const noteState = (props) => {
         const json = await response.json();
         setNotes(json.notes);
     }
+
     //  Add a note 
     const addNote = async (title, description, tag) => {
         const response = await fetch(`${host}/api/notes/addnote`, {
@@ -73,7 +75,6 @@ const noteState = (props) => {
         const json = response.json();
         const newNote = notes.filter((note) => { return note._id !== id })
         setNotes(newNote);
-        // props.showAlert("success", "Deleted successfully")
     }
 
 

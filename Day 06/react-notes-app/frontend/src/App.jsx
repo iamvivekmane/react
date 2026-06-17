@@ -9,7 +9,6 @@ import Alert from './Components/Alert'
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 
-
 function App() {
   const [alert, setAlert] = useState(null)
   const showAlert = (Type, Message) => {
@@ -29,7 +28,7 @@ function App() {
           <Alert alert={alert} />
           <div className="container">
             <Routes>
-              {/* <Route exact path="/" element={<Home showAlert={showAlert} />} /> */}
+              <Route exact path="/" element={<Home showAlert={showAlert} />} />
               <Route exact path="/Home" element={<Home showAlert={showAlert} />} />
               <Route exact path="/About" element={<About showAlert={showAlert} />} />
               <Route exact path="/Login" element={<Login showAlert={showAlert} />} />
