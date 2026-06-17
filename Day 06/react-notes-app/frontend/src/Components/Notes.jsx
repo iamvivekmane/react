@@ -17,6 +17,7 @@ const Notes = (props) => {
         }
     }, [])
 
+
     const [note, setNote] = useState({ eid: "", etitle: "", edescription: "", etag: "" })
 
     const ref = useRef(null)
