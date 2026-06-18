@@ -8,6 +8,7 @@ import NoteState from './context/notes/NoteState'
 import Alert from './Components/Alert'
 import Login from './Components/Login';
 import Signup from './Components/Signup';
+import Landing from './Components/Landing';
 
 function App() {
   const [alert, setAlert] = useState(null)
@@ -28,7 +29,7 @@ function App() {
           <Alert alert={alert} />
           <div className="container">
             <Routes>
-              <Route exact path="/" element={<Home showAlert={showAlert} />} />
+              <Route exact path="/" element={<Landing showAlert={showAlert} />} />
               <Route exact path="/Home" element={<Home showAlert={showAlert} />} />
               <Route exact path="/About" element={<About showAlert={showAlert} />} />
               <Route exact path="/Login" element={<Login showAlert={showAlert} />} />
