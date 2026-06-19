@@ -26,7 +26,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                         {!localStorage.getItem('token') ? <form className='d-flex'>
-                            <Link className="btn btn-secondary mx-1 w-100" type="submit" to="/Login">Login</Link>
+                            <Link className="btn border mx-1" type="submit" to="/Login">Login</Link>
                             <Link className="btn btn-secondary mx-1" type="submit" to="/Signup">Signup</Link>
                         </form> : <div>
                             <span className='mx-2'></span>

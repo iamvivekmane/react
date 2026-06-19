@@ -9,6 +9,7 @@ import Alert from './Components/Alert'
 import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Landing from './Components/Landing';
+import Footer from './Components/Footer';
 
 function App() {
   const [alert, setAlert] = useState(null)
@@ -36,6 +37,7 @@ function App() {
               <Route exact path="/Signup" element={<Signup showAlert={showAlert} />} />
             </Routes>
           </div>
+          <Footer />
         </BrowserRouter>
       </NoteState>
     </>
