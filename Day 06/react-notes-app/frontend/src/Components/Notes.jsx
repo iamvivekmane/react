@@ -77,14 +77,16 @@ const Notes = (props) => {
                 </div>
             </div >
             <AddNote showAlert={props.showAlert} />
-            <div className="row my-3">
-                <h2>Your notes</h2>
-                <div className="container my-3">
-                    {notes.length === 0 && 'No notes to display'}
+            <div className='container'>
+                <div className="row my-3">
+                    <h2>Your notes</h2>
+                    <div className="container my-3">
+                        {notes.length === 0 && 'No notes to display'}
+                    </div>
+                    {notes.map((note) => {
+                        return <Noteitem showAlert={props.showAlert} key={note._id} note={note} updateNote={updateNote} />;
+                    })}
                 </div>
-                {notes.map((note) => {
-                    return <Noteitem showAlert={props.showAlert} key={note._id} note={note} updateNote={updateNote} />;
-                })}
             </div>
         </>
     )
