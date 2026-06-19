@@ -32,7 +32,7 @@ router.post('/addnote', fetchuser, [
         // If there are errors return bad request and the errors
         const result = validationResult(req);
         if (!result.isEmpty()) {
-            return res.send(`Hello, ${req.query.person}!`);
+            return res.status(400).json({ errors: errors.array() });
         }
         const note = new Note({
             title, description, tag, user: req.user.id

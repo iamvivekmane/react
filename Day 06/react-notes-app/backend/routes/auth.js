@@ -21,7 +21,7 @@ router.post('/signup', [
     // If there are errors return bad request and the errors
     const result = validationResult(req);
     if (!result.isEmpty()) {
-        return res.send(success, `Hello, ${req.query.person}!`);
+        return res.status(400).json({ errors: errors.array() });
     }
 
 
@@ -58,12 +58,6 @@ router.post('/signup', [
 })
 
 
-
-
-
-
-
-
 // Route 2
 // Authenticate a user using POST : api/auth/login : No login required
 router.post('/login', [
@@ -75,7 +69,8 @@ router.post('/login', [
     // If there are errors return bad request and the errors
     const result = validationResult(req);
     if (!result.isEmpty()) {
-        return res.send(`Hello, ${req.query.person}!`);
+        console.log("Thiks is getting called")
+        return res.status(400).json({ errors: result.array() });
     }
     const { email, password } = req.body;
     try {
