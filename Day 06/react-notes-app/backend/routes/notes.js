@@ -71,7 +71,6 @@ router.put('/updatenote/:id', fetchuser, async (req, res) => {
     } catch (error) {
         console.error(error.message)
         res.status(500).send("Internal server error");
-        res.status(500).send("Internal server error");
     }
 })
 
