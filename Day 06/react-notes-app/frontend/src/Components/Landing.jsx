@@ -5,11 +5,11 @@ import Footer from './Footer';
 const Landing = () => {
     return (
         <>
-            <div className="d-flex flex-column align-items-center justify-content-center">
+            <div className="d-flex flex-column align-items-center justify-content-center flex-grow-1 gap-4">
                 <div>
                     <h1 className='text-center'>TheNotebook - Your notes always in sync</h1>
                 </div>
-                <div className='py-5'>
+                <div >
                     <p className='text-center'>Create, edit, and organize your notes the moment an idea strikes. Search through everything you've ever written in seconds, and pick up right where you left off on your laptop, phone, or tablet. Every note is encrypted in transit and at rest, and stays tied only to your account.</p>
                 </div>
                 <div className="buttons d-flex flex-row gap-2">
@@ -18,7 +18,7 @@ const Landing = () => {
                 </div>
             </div >
             <div className="main">
-                <div className='container mt-5' >
+                <div className='container'>
                     <div className="row justify-content-center">
                         <div className="col-md-3 my-3">
                             <div className="card h-100 w-100">
@@ -47,7 +47,7 @@ const Landing = () => {
                             <div className="card h-100 w-100">
                                 <div className="card-body">
                                     <div className=" bg-primay" style={{ width: "35px" }}>
-                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#0d6efd" d="M544.1 256L552 256C565.3 256 576 245.3 576 232L576 88C576 78.3 570.2 69.5 561.2 65.8C552.2 62.1 541.9 64.2 535 71L483.3 122.8C439 86.1 382 64 320 64C191 64 84.3 159.4 66.6 283.5C64.1 301 76.2 317.2 93.7 319.7C111.2 322.2 127.4 310 129.9 292.6C143.2 199.5 223.3 128 320 128C364.4 128 405.2 143 437.7 168.3L391 215C384.1 221.9 382.1 232.2 385.8 241.2C389.5 250.2 398.3 256 408 256L544.1 256zM573.5 356.5C576 339 563.8 322.8 546.4 320.3C529 317.8 512.7 330 510.2 347.4C496.9 440.4 416.8 511.9 320.1 511.9C275.7 511.9 234.9 496.9 202.4 471.6L249 425C255.9 418.1 257.9 407.8 254.2 398.8C250.5 389.8 241.7 384 232 384L88 384C74.7 384 64 394.7 64 408L64 552C64 561.7 69.8 570.5 78.8 574.2C87.8 577.9 98.1 575.8 105 569L156.8 517.2C201 553.9 258 576 320 576C449 576 555.7 480.6 573.4 356.5z" /></svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640"><path fill="#0d6efd" d="M256 160L256 224L384 224L384 160C384 124.7 355.3 96 320 96C284.7 96 256 124.7 256 160zM192 224L192 160C192 89.3 249.3 32 320 32C390.7 32 448 89.3 448 160L448 224C483.3 224 512 252.7 512 288L512 512C512 547.3 483.3 576 448 576L192 576C156.7 576 128 547.3 128 512L128 288C128 252.7 156.7 224 192 224z" /></svg>
                                     </div>
                                     <p className="card-text h5 pt-2">Stays private
                                     </p>

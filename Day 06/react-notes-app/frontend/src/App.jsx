@@ -26,18 +26,20 @@ function App() {
     <>
       <NoteState>
         <BrowserRouter>
-          <Navbar />
-          <Alert alert={alert} />
-          <div className="container">
-            <Routes>
-              <Route exact path="/" element={<Landing showAlert={showAlert} />} />
-              <Route exact path="/Home" element={<Home showAlert={showAlert} />} />
-              <Route exact path="/About" element={<About showAlert={showAlert} />} />
-              <Route exact path="/Login" element={<Login showAlert={showAlert} />} />
-              <Route exact path="/Signup" element={<Signup showAlert={showAlert} />} />
-            </Routes>
+          <div className="d-flex flex-column min-vh-100">
+            <Navbar />
+            <Alert alert={alert} />
+            <main className="flex-grow-1 d-flex flex-column">
+              <Routes>
+                <Route exact path="/" element={<Landing showAlert={showAlert} />} />
+                <Route exact path="/Home" element={<Home showAlert={showAlert} />} />
+                <Route exact path="/About" element={<About showAlert={showAlert} />} />
+                <Route exact path="/Login" element={<Login showAlert={showAlert} />} />
+                <Route exact path="/Signup" element={<Signup showAlert={showAlert} />} />
+              </Routes>
+            </main>
+            <Footer />
           </div>
-          <Footer />
         </BrowserRouter>
       </NoteState>
     </>
