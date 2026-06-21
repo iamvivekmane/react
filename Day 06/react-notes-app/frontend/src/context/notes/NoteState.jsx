@@ -3,7 +3,7 @@ import NoteContext from "./noteContext";
 
 const noteState = (props) => {
 
-    const host = "http://localhost:5000"
+    const host = import.meta.env.VITE_API_URL
 
     const notesInitial = []
 
