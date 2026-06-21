@@ -1,7 +1,4 @@
-import { useState } from 'react'
-import './App.css'
 import Navbar from './Components/Navbar'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './Components/Home'
 import About from './Components/About'
 import NoteState from './context/notes/NoteState'
@@ -10,6 +7,9 @@ import Login from './Components/Login';
 import Signup from './Components/Signup';
 import Landing from './Components/Landing';
 import Footer from './Components/Footer';
+import './App.css'
+import { useState } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 function App() {
   const [alert, setAlert] = useState(null)

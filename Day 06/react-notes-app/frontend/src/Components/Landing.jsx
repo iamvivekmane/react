@@ -1,6 +1,6 @@
+import Footer from './Footer';
 import React, { useContext, useEffect, useEffectEvent } from 'react'
 import { Link, Navigate, useLocation, useNavigate } from 'react-router-dom';
-import Footer from './Footer';
 
 const Landing = () => {
     return (
