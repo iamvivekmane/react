@@ -9,7 +9,7 @@ const Signup = (props) => {
     const handleSubmit = async (e) => {
         // It prevents the page from reloading
         e.preventDefault();
-        const response = await fetch(`${host}api/auth/signup`, {
+        const response = await fetch(`${host}/api/auth/signup`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
