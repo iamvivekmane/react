@@ -4,11 +4,12 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 const Login = (props) => {
     const [credentials, setCredentials] = useState({ email: "", password: "" })
     const navigate = useNavigate();
+    const host = import.meta.env.VITE_API_URL
 
     const handleSubmit = async (e) => {
         // It prevents the page from reloading
         e.preventDefault();
-        const response = await fetch(`http://localhost:5000/api/auth/login`, {
+        const response = await fetch(`${host}/api/auth/login`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
