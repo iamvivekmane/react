@@ -17,7 +17,6 @@ const Signup = (props) => {
             body: JSON.stringify({ name: credentials.name, email: credentials.email, password: credentials.password })
         });
         const json = await response.json();
-        console.log(json)
         if (json.success) {
             // save the auth token and redirect
             props.showAlert("success", "Account created successfully")
@@ -28,7 +27,6 @@ const Signup = (props) => {
             props.showAlert("danger", "Invalid credentials")
         }
     }
-
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }
