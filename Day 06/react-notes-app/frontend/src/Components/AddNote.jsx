@@ -9,7 +9,6 @@ const AddNote = (props) => {
         e.preventDefault();
         addNote(note.title, note.description, note.tag);
         setNote({ title: "", description: "", tag: "" })
-        console.log("it is getting clicked")
         props.showAlert("success", "Note added successfully")
     }
     const onChange = (e) => {
