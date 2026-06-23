@@ -21,14 +21,10 @@ const Notes = (props) => {
         }
     }, [])
 
-
-
-
     const updateNote = (currentNote) => {
         ref.current.click();
         setNote({ eid: currentNote._id, etitle: currentNote.title, edescription: currentNote.description, etag: currentNote.tag });
     }
-
 
     const handleClick = (e) => {
         editNote(note.eid, note.etitle, note.edescription, note.etag)

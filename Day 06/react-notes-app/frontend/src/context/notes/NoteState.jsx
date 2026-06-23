@@ -2,11 +2,8 @@ import React, { useState } from "react";
 import NoteContext from "./noteContext";
 
 const noteState = (props) => {
-
     const host = import.meta.env.VITE_API_URL
-
     const notesInitial = []
-
     const [notes, setNotes] = useState(notesInitial)
 
     //  Get all notes
@@ -76,7 +73,6 @@ const noteState = (props) => {
         const newNote = notes.filter((note) => { return note._id !== id })
         setNotes(newNote);
     }
-
 
     return (
         <NoteContext.Provider value={{ notes, addNote, editNote, deleteNote, getNotes }}>

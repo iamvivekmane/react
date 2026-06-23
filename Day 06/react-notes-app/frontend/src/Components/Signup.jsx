@@ -27,6 +27,7 @@ const Signup = (props) => {
             props.showAlert("danger", "Invalid credentials")
         }
     }
+    
     const onChange = (e) => {
         setCredentials({ ...credentials, [e.target.name]: e.target.value })
     }

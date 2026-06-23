@@ -5,7 +5,6 @@ const fetchuser = require('../middleware/fetchuser')
 const Note = require('../models/Note');
 const { body, validationResult } = require('express-validator')
 
-
 // Route 1
 // Get all notes using GET : api/notes/fetchallnotes : login required
 router.get('/fetchallnotes', fetchuser, async (req, res) => {
@@ -17,8 +16,6 @@ router.get('/fetchallnotes', fetchuser, async (req, res) => {
         res.status(500).send("Internal server error");
     }
 })
-
-
 
 // Route 2
 // Add a new note using POST : api/notes/addnote : login required
@@ -44,7 +41,6 @@ router.post('/addnote', fetchuser, [
         res.status(500).send("Internal server error h");
     }
 })
-
 
 // Route 3
 // Update an existing note using POST : api/notes/updatenote : login required
@@ -74,9 +70,6 @@ router.put('/updatenote/:id', fetchuser, async (req, res) => {
     }
 })
 
-
-
-
 // Route 4
 // Delete note using DELETE : api/notes/deletenote : login required
 router.delete('/deletenote/:id', fetchuser, async (req, res) => {
@@ -97,8 +90,4 @@ router.delete('/deletenote/:id', fetchuser, async (req, res) => {
         res.status(500).send("Internal server error");
     }
 })
-
-
-
-
 module.exports = router
