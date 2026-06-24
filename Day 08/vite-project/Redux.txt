@@ -1,0 +1,7 @@
+Three core principles of react redux :
+
+Single source of truth — the entire app state lives in one store object.
+
+State is read-only — you never modify state directly. You dispatch an action to describe what happened.
+
+Changes happen through pure functions — reducers take the old state + an action, and return new state. No side effects inside reducers.
