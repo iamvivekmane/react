@@ -1,3 +1,16 @@
+Why redux ?
+
+- When js application grows big it becomes difficult for the user to manage it.
+- Redux solves this problem by managing application state in a single global object called store.
+- Makes testing easy.
+- Maintains consistency throughout the application. 
+ 
+
+
+
+
+
+
 Three core principles of react redux :
 
 Single source of truth — the entire app state lives in one store object.
