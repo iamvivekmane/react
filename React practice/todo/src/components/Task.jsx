@@ -1,14 +1,16 @@
 import React from 'react'
 
-const Task = () => {
+const Task = (props) => {
+    const Tasks = props.Tasks;
+    console.log(Tasks.title);
     return (
-        <div class="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3">
+        <div className="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3">
             <div>
-                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
+                <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault1" />
             </div>
             <div>
-                <label class="form-check-label" for="radioDefault1">
-                    Default radio
+                <label className="form-check-label" htmlFor="radioDefault1">
+                    {Tasks.title}
                 </label>
             </div>
             <div>

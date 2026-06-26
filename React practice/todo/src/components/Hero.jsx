@@ -1,18 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Task from './Task'
 
 const Hero = () => {
+    const [Tasks, setTasks] = useState(
+        [{ id: 0, title: "Make", status: "true" },
+        { id: 1, title: "Take", status: "false" }
+            ,]
+    )
     return (
         <>
             <h2 className='text-center'>My tasks</h2>
             <div className="container d-flex align-items-center justify-content-center flex-column gap-3 pt-5">
-                <form class="row g-3">
-                    <div class="col-auto">
-                        <label for="inputPassword2" class="visually-hidden">Task</label>
-                        <input type="text" class="form-control" id="inputPassword2" placeholder="New task" />
+                <form className="row g-3">
+                    <div className="col-auto">
+                        <label htmlFor="inputPassword2" className="visually-hidden">Task</label>
+                        <input type="text" className="form-control" id="inputPassword2" placeholder="New task" />
                     </div>
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-primary mb-3">Add task</button>
+                    <div className="col-auto">
+                        <button type="submit" className="btn btn-primary mb-3">Add task</button>
                     </div>
                 </form>
                 <div className='container d-flex flex-start align-items-center justify-content-center gap-2'>
@@ -21,9 +26,13 @@ const Hero = () => {
                     <button className='btn btn-primary'>Done</button>
                 </div>
                 <div>
-                    <Task />
+                    {
+                        Tasks.map((element) => {
+                            return <Task Tasks={element} key={element.id} />
+                        })
+                    }
                 </div>
-                <div className>
+                <div>
                     <button className='btn btn-primary'>Clear done</button>
                 </div>
             </div>
