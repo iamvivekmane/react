@@ -1,8 +1,15 @@
 import React from 'react'
 
 const Task = (props) => {
-    const Tasks = props.Tasks;
-    // console.log(Tasks.title);
+    const TasksLocal = props.Tasks;
+
+    // console.log(TasksLocal);
+    // console.log(props.Tasks);
+
+
+    // const deleteButton = () => {
+    //     props.setCurrentIndex(TasksLocal.id);
+    // }
     return (
         <div className="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3">
             <div>
@@ -10,11 +17,11 @@ const Task = (props) => {
             </div>
             <div>
                 <label className="form-check-label" htmlFor="radioDefault1">
-                    {Tasks.title}
+                    {TasksLocal.title}
                 </label>
             </div>
             <div>
-                <button>Delete</button>
+                <button onClick={() => { props.onDelete(TasksLocal.id) }}>Delete</button>
             </div>
         </div>
     )

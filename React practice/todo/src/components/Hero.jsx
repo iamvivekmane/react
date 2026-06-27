@@ -11,8 +11,24 @@ const Hero = () => {
             { id: 5, title: "Take", status: "false" }
         ]
     )
+    // console.log("The tasks are ", Tasks)
 
     const [newTask, setNewTask] = useState('')
+
+    const [currentIndex, setCurrentIndex] = useState('')
+
+    // console.log("Current index is ", currentIndex)
+
+    const onDelete = (currentIndex) => {
+        for (let i = 0; i < Tasks.length; i++) {
+            if (Tasks[i].id === currentIndex) {
+                console.log(Tasks[i], "Must be deleted")
+                setTasks(Tasks.filter(task => task.id !== currentIndex))
+            }
+        }
+    }
+
+
     const buttonClick = (e) => {
         // setNote({ ...Tasks, [e.target.name]: e.target.value })
         // const value = e.target.value;
@@ -50,7 +66,7 @@ const Hero = () => {
                 <div>
                     {
                         Tasks.map((element) => {
-                            return <Task Tasks={element} key={element.id} />
+                            return <Task Tasks={element} key={element.id} setTasks={setTasks} onDelete={onDelete} />
                         })
                     }
                 </div>
