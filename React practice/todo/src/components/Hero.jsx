@@ -11,13 +11,12 @@ const Hero = () => {
             { id: 5, title: "Take", status: "false" }
         ]
     )
-    // console.log("The tasks are ", Tasks)
 
     const [newTask, setNewTask] = useState('')
 
-    const [currentIndex, setCurrentIndex] = useState('')
+    const [flag, setFlag] = useState(false)
 
-    // console.log("Current index is ", currentIndex)
+    const [currentIndex, setCurrentIndex] = useState('')
 
     const onDelete = (currentIndex) => {
         for (let i = 0; i < Tasks.length; i++) {
@@ -28,11 +27,7 @@ const Hero = () => {
         }
     }
 
-
     const buttonClick = (e) => {
-        // setNote({ ...Tasks, [e.target.name]: e.target.value })
-        // const value = e.target.value;
-        // Tasks.push({ id: 10, title: newTask, status: "false" });
         if (newTask.length <= 0) {
             console.log("empty string")
         }
@@ -44,6 +39,30 @@ const Hero = () => {
             console.log("pushed");
             console.log(Tasks)
         }
+    }
+
+    const onRadioClick = (index) => {
+        // if (flag) {
+        //     setFlag(false);
+        // }
+        // else {
+        //     setFlag(true)
+        // }
+        // console.log("clicked me")
+
+
+        console.log(index);
+        // setTasks(Tasks.map(Task => {
+        //     Task.id === index ? { ...Tasks, status: !status } : Task
+        // }))
+
+        // for (let i = 0; i < Tasks.length; i++) {
+        //     const element = Tasks[i];
+        //     if (Tasks[i].id === index) {
+
+        //     }
+
+        // }
     }
     return (
         <>
@@ -66,7 +85,7 @@ const Hero = () => {
                 <div>
                     {
                         Tasks.map((element) => {
-                            return <Task Tasks={element} key={element.id} setTasks={setTasks} onDelete={onDelete} />
+                            return <Task Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} />
                         })
                     }
                 </div>
