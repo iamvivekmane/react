@@ -2,7 +2,7 @@ import React from 'react'
 
 const Task = (props) => {
     const Tasks = props.Tasks;
-    console.log(Tasks.title);
+    // console.log(Tasks.title);
     return (
         <div className="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3">
             <div>

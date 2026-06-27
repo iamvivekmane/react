@@ -3,21 +3,43 @@ import Task from './Task'
 
 const Hero = () => {
     const [Tasks, setTasks] = useState(
-        [{ id: 0, title: "Make", status: "true" },
-        { id: 1, title: "Take", status: "false" }
-            ,]
+        [
+            { id: 0, title: "Make", status: "true" },
+            { id: 1, title: "Take", status: "false" },
+            { id: 3, title: "Take", status: "false" },
+            { id: 4, title: "Take", status: "false" },
+            { id: 5, title: "Take", status: "false" }
+        ]
     )
+
+    const [newTask, setNewTask] = useState('')
+    const buttonClick = (e) => {
+        // setNote({ ...Tasks, [e.target.name]: e.target.value })
+        // const value = e.target.value;
+        // Tasks.push({ id: 10, title: newTask, status: "false" });
+        if (newTask.length <= 0) {
+            console.log("empty string")
+        }
+        else {
+            const latestId = Tasks.length;
+            console.log(latestId)
+
+            setTasks(Tasks.concat({ id: latestId + 1, title: newTask, status: "false" }))
+            console.log("pushed");
+            console.log(Tasks)
+        }
+    }
     return (
         <>
             <h2 className='text-center'>My tasks</h2>
             <div className="container d-flex align-items-center justify-content-center flex-column gap-3 pt-5">
                 <form className="row g-3">
                     <div className="col-auto">
-                        <label htmlFor="inputPassword2" className="visually-hidden">Task</label>
-                        <input type="text" className="form-control" id="inputPassword2" placeholder="New task" />
+                        <label htmlFor="task" className="visually-hidden">Task</label>
+                        <input type="text" className="form-control" id="title" placeholder="New task" name="title" onChange={(e) => { setNewTask(e.target.value) }} />
                     </div>
                     <div className="col-auto">
-                        <button type="submit" className="btn btn-primary mb-3">Add task</button>
+                        <button type="button" className="btn btn-primary mb-3" onClick={buttonClick}>Add task</button>
                     </div>
                 </form>
                 <div className='container d-flex flex-start align-items-center justify-content-center gap-2'>
