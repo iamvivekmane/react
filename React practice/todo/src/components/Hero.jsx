@@ -4,11 +4,7 @@ import Task from './Task'
 const Hero = () => {
     const [Tasks, setTasks] = useState(
         [
-            { id: 0, title: "Make", status: "true" },
-            { id: 1, title: "Take", status: "false" },
-            { id: 3, title: "Take", status: "false" },
-            { id: 4, title: "Take", status: "false" },
-            { id: 5, title: "Take", status: "false" }
+
         ]
     )
 
