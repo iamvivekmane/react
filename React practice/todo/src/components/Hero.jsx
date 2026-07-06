@@ -4,7 +4,11 @@ import Task from './Task'
 const Hero = () => {
     const [Tasks, setTasks] = useState(
         [
-
+            { id: 0, title: "Make", status: "true" },
+            { id: 1, title: "Take", status: "false" },
+            { id: 3, title: "Take", status: "false" },
+            { id: 4, title: "Take", status: "false" },
+            { id: 5, title: "Take", status: "false" }
         ]
     )
 
@@ -47,18 +51,14 @@ const Hero = () => {
         // console.log("clicked me")
 
 
-        console.log(index);
-        // setTasks(Tasks.map(Task => {
-        //     Task.id === index ? { ...Tasks, status: !status } : Task
-        // }))
+        console.log(index, "must be checked");
+        for (let i = 0; i < Tasks.length; i++) {
+            if (Tasks[i].id === currentIndex) {
+                setTasks(Tasks.filter(task => task.id !== currentIndex))
+            }
+        }
 
-        // for (let i = 0; i < Tasks.length; i++) {
-        //     const element = Tasks[i];
-        //     if (Tasks[i].id === index) {
 
-        //     }
-
-        // }
     }
     return (
         <>
