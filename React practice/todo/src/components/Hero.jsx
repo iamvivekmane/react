@@ -4,11 +4,11 @@ import Task from './Task'
 const Hero = () => {
     const [Tasks, setTasks] = useState(
         [
-            { id: 0, title: "Make", status: "true" },
-            { id: 1, title: "Take", status: "false" },
-            { id: 3, title: "Take", status: "false" },
-            { id: 4, title: "Take", status: "false" },
-            { id: 5, title: "Take", status: "false" }
+            // { id: 0, title: "Make", status: "false" },
+            // { id: 1, title: "Take", status: "false" },
+            // { id: 3, title: "Take", status: "true" },
+            // { id: 4, title: "Take", status: "true" },
+            // { id: 5, title: "Take", status: "true" }
         ]
     )
 
@@ -42,24 +42,10 @@ const Hero = () => {
     }
 
     const onRadioClick = (index) => {
-        // if (flag) {
-        //     setFlag(false);
-        // }
-        // else {
-        //     setFlag(true)
-        // }
-        // console.log("clicked me")
-
-
         console.log(index, "must be checked");
-        for (let i = 0; i < Tasks.length; i++) {
-            if (Tasks[i].id === currentIndex) {
-                setTasks(Tasks.filter(task => task.id !== currentIndex))
-            }
-        }
-
-
+        setTasks(prev => prev.map(task => task.id === index ? { ...task, status: !task.status } : task))
     }
+
     return (
         <>
             <h2 className='text-center'>My tasks</h2>

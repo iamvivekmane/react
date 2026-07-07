@@ -4,7 +4,7 @@ const Task = (props) => {
     const TasksLocal = props.Tasks;
 
     // console.log(TasksLocal);
-    // console.log(props.Tasks);
+    console.log(props.Tasks);
 
 
     // const deleteButton = () => {
@@ -19,10 +19,17 @@ const Task = (props) => {
                 <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault1" onClick={() => { props.onRadioClick(TasksLocal.id) }} />
             </div>
             <div>
-                {props.flag ? <label className="form-check-label" htmlFor="radioDefault1">
+                {/* {props.status ? <label className="form-check-label" htmlFor="radioDefault1">
                     <s>{TasksLocal.title}</s>
                 </label> : <label className="form-check-label" htmlFor="radioDefault1">
                     {TasksLocal.title}
+                </label>} */}
+
+
+                {props.Tasks.status ? <label className="form-check-label" htmlFor="radioDefault1">
+                    {TasksLocal.title}
+                </label> : <label className="form-check-label" htmlFor="radioDefault1">
+                    <s>{TasksLocal.title}</s>
                 </label>}
             </div>
             <div>
