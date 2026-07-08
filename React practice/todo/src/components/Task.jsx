@@ -2,40 +2,34 @@ import React, { useState } from 'react'
 
 const Task = (props) => {
     const TasksLocal = props.Tasks;
+    const remaining = []
 
-    // console.log(TasksLocal);
-    console.log(props.Tasks);
-
-
-    // const deleteButton = () => {
-    //     props.setCurrentIndex(TasksLocal.id);
-    // }
-
-
-
+    for (let i = 0; i < TasksLocal.length; i++) {
+        if (TasksLocal[i].status == true) {
+            remaining.push(TasksLocal[i])
+        }
+    }
+    console.log("remaingin")
+    console.log(remaining)
     return (
-        <div className="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3">
-            <div>
-                <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault1" onClick={() => { props.onRadioClick(TasksLocal.id) }} />
-            </div>
-            <div>
-                {/* {props.status ? <label className="form-check-label" htmlFor="radioDefault1">
-                    <s>{TasksLocal.title}</s>
-                </label> : <label className="form-check-label" htmlFor="radioDefault1">
-                    {TasksLocal.title}
-                </label>} */}
-
-
-                {props.Tasks.status ? <label className="form-check-label" htmlFor="radioDefault1">
-                    {TasksLocal.title}
-                </label> : <label className="form-check-label" htmlFor="radioDefault1">
-                    <s>{TasksLocal.title}</s>
-                </label>}
-            </div>
-            <div>
-                <button onClick={() => { props.onDelete(TasksLocal.id) }}>Delete</button>
-            </div>
-        </div>
+        <>
+            {!props.all && props.Tasks.status === 'false' ? < div className="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3" >
+                <div>
+                    <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault1" onClick={() => { props.onRadioClick(TasksLocal.id) }} />
+                </div>
+                <div>
+                    {props.Tasks.status ? <label className="form-check-label" htmlFor="radioDefault1">
+                        {TasksLocal.title}
+                    </label> : <label className="form-check-label" htmlFor="radioDefault1">
+                        <s>{TasksLocal.title}</s>
+                    </label>}
+                </div>
+                <div>
+                    <button onClick={() => { props.onDelete(TasksLocal.id) }}>Delete</button>
+                </div>
+            </ div > : "hello"
+            }
+        </>
     )
 }
 

@@ -4,11 +4,11 @@ import Task from './Task'
 const Hero = () => {
     const [Tasks, setTasks] = useState(
         [
-            // { id: 0, title: "Make", status: "false" },
-            // { id: 1, title: "Take", status: "false" },
-            // { id: 3, title: "Take", status: "true" },
-            // { id: 4, title: "Take", status: "true" },
-            // { id: 5, title: "Take", status: "true" }
+            { id: 0, title: "Make", status: "false" },
+            { id: 1, title: "Take", status: "false" },
+            { id: 3, title: "Take", status: "true" },
+            { id: 4, title: "Take", status: "true" },
+            { id: 5, title: "Take", status: "true" }
         ]
     )
 
@@ -17,6 +17,8 @@ const Hero = () => {
     const [flag, setFlag] = useState(false)
 
     const [currentIndex, setCurrentIndex] = useState('')
+
+    const [all, setAll] = useState(false)
 
     const onDelete = (currentIndex) => {
         for (let i = 0; i < Tasks.length; i++) {
@@ -46,6 +48,17 @@ const Hero = () => {
         setTasks(prev => prev.map(task => task.id === index ? { ...task, status: !task.status } : task))
     }
 
+    const showAll = () => {
+        if (all) {
+            console.log("all is true")
+            setAll(false);
+        }
+        else {
+            console.log("all is false")
+            setAll(true)
+        }
+    }
+
     return (
         <>
             <h2 className='text-center'>My tasks</h2>
@@ -60,14 +73,15 @@ const Hero = () => {
                     </div>
                 </form>
                 <div className='container d-flex flex-start align-items-center justify-content-center gap-2'>
-                    <button className='btn btn-primary'>All</button>
-                    <button className='btn btn-primary'>Active</button>
+                    <button className='btn btn-primary' >All</button>
+                    <button className='btn btn-primary' onClick={showAll}>Active</button>
                     <button className='btn btn-primary'>Done</button>
                 </div>
                 <div>
                     {
+                        
                         Tasks.map((element) => {
-                            return <Task Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} />
+                            return <Task Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} all={all} />
                         })
                     }
                 </div>
