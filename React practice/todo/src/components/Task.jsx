@@ -3,6 +3,9 @@ import React, { useState } from 'react'
 const Task = (props) => {
     const TasksLocal = props.Tasks;
     const remaining = []
+    const clearDoneTasks = () => {
+        setTasks((prevTasks) => prevTasks.filter((task) => !task.done));
+    };
 
     for (let i = 0; i < TasksLocal.length; i++) {
         if (TasksLocal[i].status == true) {
