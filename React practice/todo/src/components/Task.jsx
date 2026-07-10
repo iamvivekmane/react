@@ -4,7 +4,7 @@ const Task = (props) => {
     const TasksLocal = props.Tasks;
     return (
         <>
-            < div className="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3" >
+            < div className="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3 rounded-2" >
                 <div>
                     <input className="form-check-input" type="radio" name="radioDefault" id="radioDefault1" onClick={() => { props.onRadioClick(TasksLocal.id) }} />
                 </div>
@@ -16,7 +16,7 @@ const Task = (props) => {
                     </label>}
                 </div>
                 <div>
-                    <button onClick={() => { props.onDelete(TasksLocal.id) }}>Delete</button>
+                    <button className='btn btn-danger' onClick={() => { props.onDelete(TasksLocal.id) }}>Delete</button>
                 </div>
             </ div >
         </>

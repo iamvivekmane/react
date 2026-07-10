@@ -16,7 +16,7 @@ const Active = (props) => {
                     </label>
                 </div>
                 <div>
-                    <button onClick={() => { props.onDelete(TasksLocal.id) }}>Delete</button>
+                    <button className='btn btn-danger' onClick={() => { props.onDelete(TasksLocal.id) }}>Delete</button>
                 </div>
             </ div > : ""
             }

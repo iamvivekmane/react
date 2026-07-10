@@ -56,8 +56,8 @@ const Hero = () => {
 
     return (
         <>
-            <h2 className='text-center'>My tasks</h2>
-            <div className="container d-flex align-items-center justify-content-center flex-column gap-3 pt-5">
+            <h1 className='text-center'>To-Do List</h1>
+            <div className="container d-flex align-items-center justify-content-center flex-column gap-3 pt-3">
                 <form className="row g-3">
                     <div className="col-auto">
                         <label htmlFor="task" className="visually-hidden">Task</label>
@@ -69,11 +69,11 @@ const Hero = () => {
                 </form>
                 <div className='container d-flex flex-start align-items-center justify-content-center gap-2'>
                     <button className='btn btn-primary' onClick={() => { toggle('all') }}>All</button>
-                    <button className='btn btn-primary' onClick={() => { toggle('active') }}>Active</button>
-                    <button className='btn btn-primary' onClick={() => { toggle('done') }}>Done</button>
+                    <button className='btn btn-info' onClick={() => { toggle('active') }}>Active</button>
+                    <button className='btn btn-success' onClick={() => { toggle('done') }}>Done</button>
                 </div>
-                <h1>{flag} Tasks</h1>
-                <div>
+                <h2>{flag} Tasks</h2>
+                <div className='mt-0 pt-0'>
                     {
                         Tasks.map((element) => {
                             if (flag === 'all') {
