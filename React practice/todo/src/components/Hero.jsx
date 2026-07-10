@@ -1,24 +1,26 @@
 import React, { useState } from 'react'
 import Task from './Task'
+import Done from './Done'
+import Active from './Active'
 
 const Hero = () => {
     const [Tasks, setTasks] = useState(
         [
-            { id: 0, title: "Make", status: "false" },
-            { id: 1, title: "Take", status: "false" },
-            { id: 3, title: "Take", status: "true" },
-            { id: 4, title: "Take", status: "true" },
-            { id: 5, title: "Take", status: "true" }
+            // { id: 0, title: "Make", status: "false" },
+            // { id: 1, title: "Take", status: "false" },
+            // { id: 3, title: "Take", status: "true" },
+            // { id: 4, title: "Take", status: "true" },
+            // { id: 5, title: "Take", status: "true" }
         ]
     )
 
     const [newTask, setNewTask] = useState('')
 
-    const [flag, setFlag] = useState(false)
+    const [flag, setFlag] = useState('all')
 
     const [currentIndex, setCurrentIndex] = useState('')
 
-    const [all, setAll] = useState(false)
+
 
     const onDelete = (currentIndex) => {
         for (let i = 0; i < Tasks.length; i++) {
@@ -37,26 +39,19 @@ const Hero = () => {
             const latestId = Tasks.length;
             console.log(latestId)
 
-            setTasks(Tasks.concat({ id: latestId + 1, title: newTask, status: "false" }))
-            console.log("pushed");
-            console.log(Tasks)
+            setTasks(Tasks.concat({ id: latestId + 1, title: newTask, status: false }))
+            setFlag('all')
         }
     }
 
     const onRadioClick = (index) => {
         console.log(index, "must be checked");
-        setTasks(prev => prev.map(task => task.id === index ? { ...task, status: !task.status } : task))
+        setTasks(Tasks => Tasks.map(task => task.id === index ? { ...task, status: !task.status } : task))
+        console.log(Tasks)
     }
 
-    const showAll = () => {
-        if (all) {
-            console.log("all is true")
-            setAll(false);
-        }
-        else {
-            console.log("all is false")
-            setAll(true)
-        }
+    const toggle = (flag) => {
+        setFlag(flag)
     }
 
     return (
@@ -73,20 +68,24 @@ const Hero = () => {
                     </div>
                 </form>
                 <div className='container d-flex flex-start align-items-center justify-content-center gap-2'>
-                    <button className='btn btn-primary' >All</button>
-                    <button className='btn btn-primary' onClick={showAll}>Active</button>
-                    <button className='btn btn-primary'>Done</button>
+                    <button className='btn btn-primary' onClick={() => { toggle('all') }}>All</button>
+                    <button className='btn btn-primary' onClick={() => { toggle('active') }}>Active</button>
+                    <button className='btn btn-primary' onClick={() => { toggle('done') }}>Done</button>
                 </div>
+                <h1>{flag} Tasks</h1>
                 <div>
                     {
-                        
                         Tasks.map((element) => {
-                            return <Task Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} all={all} />
+                            if (flag === 'all') {
+                                return <Task Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} />
+                            } else if (flag === 'active') {
+                                return <Active Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} />
+                            }
+                            else if (flag === 'done') {
+                                return <Done Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} />
+                            }
                         })
                     }
-                </div>
-                <div>
-                    <button className='btn btn-primary'>Clear done</button>
                 </div>
             </div>
         </>
