@@ -1,26 +1,19 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Task from './Task'
 import Done from './Done'
 import Active from './Active'
 
 const Hero = () => {
-    const [Tasks, setTasks] = useState(
-        [
-            // { id: 0, title: "Make", status: "false" },
-            // { id: 1, title: "Take", status: "false" },
-            // { id: 3, title: "Take", status: "true" },
-            // { id: 4, title: "Take", status: "true" },
-            // { id: 5, title: "Take", status: "true" }
-        ]
-    )
+    const [Tasks, setTasks] = useState(() => {
+        const saved = localStorage.getItem('Tasks')
+        return saved ? JSON.parse(saved) : [];
+    })
 
     const [newTask, setNewTask] = useState('')
 
     const [flag, setFlag] = useState('all')
 
     const [currentIndex, setCurrentIndex] = useState('')
-
-
 
     const onDelete = (currentIndex) => {
         for (let i = 0; i < Tasks.length; i++) {
@@ -38,8 +31,8 @@ const Hero = () => {
         else {
             const latestId = Tasks.length;
             console.log(latestId)
-
             setTasks(Tasks.concat({ id: latestId + 1, title: newTask, status: false }))
+            console.log("Localstorage" + localStorage.getItem('Tasks'))
             setFlag('all')
         }
     }
@@ -54,11 +47,18 @@ const Hero = () => {
         setFlag(flag)
     }
 
+   
+
+    useEffect(() => {
+        localStorage.setItem('Tasks', JSON.stringify(Tasks))
+    }, [Tasks])
+
+
     return (
         <>
             <h1 className='text-center'>To-Do List</h1>
             <div className="container d-flex align-items-center justify-content-center flex-column gap-3 pt-3">
-                <form className="row g-3">
+                <form className="row g-3" onSubmit={handleSubmit}>
                     <div className="col-auto">
                         <label htmlFor="task" className="visually-hidden">Task</label>
                         <input type="text" className="form-control" id="title" placeholder="New task" name="title" onChange={(e) => { setNewTask(e.target.value) }} />
@@ -72,7 +72,7 @@ const Hero = () => {
                     <button className='btn btn-info' onClick={() => { toggle('active') }}>Active</button>
                     <button className='btn btn-success' onClick={() => { toggle('done') }}>Done</button>
                 </div>
-                <h2>{flag} Tasks</h2>
+                {/* <h2>{flag} Tasks</h2> */}
                 <div className='mt-0 pt-0'>
                     {
                         Tasks.map((element) => {
