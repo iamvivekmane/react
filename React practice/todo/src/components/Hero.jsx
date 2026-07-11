@@ -4,6 +4,7 @@ import Done from './Done'
 import Active from './Active'
 
 const Hero = () => {
+
     const [Tasks, setTasks] = useState(() => {
         const saved = localStorage.getItem('Tasks')
         return saved ? JSON.parse(saved) : [];
@@ -13,9 +14,10 @@ const Hero = () => {
 
     const [flag, setFlag] = useState('all')
 
-    const [currentIndex, setCurrentIndex] = useState('')
 
-    const onDelete = (currentIndex) => {
+    const [currentIndex, setCurrentIndex] = useState()
+
+    const deleteTask = (currentIndex) => {
         for (let i = 0; i < Tasks.length; i++) {
             if (Tasks[i].id === currentIndex) {
                 console.log(Tasks[i], "Must be deleted")
@@ -26,7 +28,7 @@ const Hero = () => {
 
     const buttonClick = (e) => {
         if (newTask.length <= 0) {
-            console.log("empty string")
+            alert("Empty string")
         }
         else {
             const latestId = Tasks.length;
@@ -79,12 +81,12 @@ const Hero = () => {
                     {
                         Tasks.map((element) => {
                             if (flag === 'all') {
-                                return <Task Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} />
+                                return <Task Tasks={element} key={element.id} deleteTask={deleteTask} onRadioClick={onRadioClick} flag={flag} />
                             } else if (flag === 'active') {
-                                return <Active Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} />
+                                return <Active Tasks={element} key={element.id} deleteTask={deleteTask} onRadioClick={onRadioClick} flag={flag} />
                             }
                             else if (flag === 'done') {
-                                return <Done Tasks={element} key={element.id} onDelete={onDelete} onRadioClick={onRadioClick} flag={flag} />
+                                return <Done Tasks={element} key={element.id} deleteTask={deleteTask} onRadioClick={onRadioClick} flag={flag} />
                             }
                         })
                     }
