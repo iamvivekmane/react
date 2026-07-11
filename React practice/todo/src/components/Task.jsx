@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 
 const Task = (props) => {
+
     const TasksLocal = props.Tasks;
+
     return (
         <>
             < div className="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3 rounded-2" >

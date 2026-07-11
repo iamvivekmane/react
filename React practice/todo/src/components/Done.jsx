@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 
 const Done = (props) => {
+
     const TasksLocal = props.Tasks;
-    console.log("from done")
-    console.log(props.Tasks)
+
     return (
         <>
             {TasksLocal.status === true ? < div className="form-check d-flex justify-content-between gap-5 border px-4 py-2 m-3 rounded-2" >

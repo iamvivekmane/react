@@ -19,7 +19,6 @@ const Hero = () => {
     const deleteTask = (currentIndex) => {
         for (let i = 0; i < Tasks.length; i++) {
             if (Tasks[i].id === currentIndex) {
-                console.log(Tasks[i], "Must be deleted")
                 setTasks(Tasks.filter(task => task.id !== currentIndex))
             }
         }
@@ -31,17 +30,13 @@ const Hero = () => {
         }
         else {
             const latestId = Tasks.length;
-            console.log(latestId)
             setTasks(Tasks.concat({ id: latestId + 1, title: newTask, status: false }))
-            console.log("Localstorage" + localStorage.getItem('Tasks'))
             setFlag('all')
         }
     }
 
     const checkTask = (index) => {
-        console.log(index, "must be checked");
         setTasks(Tasks => Tasks.map(task => task.id === index ? { ...task, status: !task.status } : task))
-        console.log(Tasks)
     }
 
 
