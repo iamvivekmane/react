@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import Task from './Task'
-import Done from './Done'
-import Active from './Active'
+import TaskItem from './TaskItem'
+import ActiveTasks from './ActiveTasks'
+import CompletedTasks from './CompletedTasks'
 
 const Hero = () => {
 
@@ -75,12 +75,12 @@ const Hero = () => {
                     {
                         Tasks.map((element) => {
                             if (flag === 'all') {
-                                return <Task Tasks={element} key={element.id} deleteTask={deleteTask} checkTask={checkTask} flag={flag} />
+                                return <TaskItem Tasks={element} key={element.id} deleteTask={deleteTask} checkTask={checkTask} flag={flag} />
                             } else if (flag === 'active') {
-                                return <Active Tasks={element} key={element.id} deleteTask={deleteTask} checkTask={checkTask} flag={flag} />
+                                return <ActiveTasks Tasks={element} key={element.id} deleteTask={deleteTask} checkTask={checkTask} flag={flag} />
                             }
                             else if (flag === 'done') {
-                                return <Done Tasks={element} key={element.id} deleteTask={deleteTask} checkTask={checkTask} flag={flag} />
+                                return <CompletedTasks Tasks={element} key={element.id} deleteTask={deleteTask} checkTask={checkTask} flag={flag} />
                             }
                         })
                     }
