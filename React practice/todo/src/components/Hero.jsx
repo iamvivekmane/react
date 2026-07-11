@@ -14,7 +14,6 @@ const Hero = () => {
 
     const [flag, setFlag] = useState('all')
 
-
     const [currentIndex, setCurrentIndex] = useState()
 
     const deleteTask = (currentIndex) => {
@@ -26,7 +25,7 @@ const Hero = () => {
         }
     }
 
-    const buttonClick = (e) => {
+    const addTask = (e) => {
         if (newTask.length <= 0) {
             alert("Empty string")
         }
@@ -39,13 +38,14 @@ const Hero = () => {
         }
     }
 
-    const onRadioClick = (index) => {
+    const checkTask = (index) => {
         console.log(index, "must be checked");
         setTasks(Tasks => Tasks.map(task => task.id === index ? { ...task, status: !task.status } : task))
         console.log(Tasks)
     }
 
-    const toggle = (flag) => {
+
+    const toggleMode = (flag) => {
         setFlag(flag)
     }
 
@@ -58,7 +58,6 @@ const Hero = () => {
         localStorage.setItem('Tasks', JSON.stringify(Tasks))
     }, [Tasks])
 
-
     return (
         <>
             <h1 className='text-center'>To-Do List</h1>
@@ -69,7 +68,7 @@ const Hero = () => {
                         <input type="text" className="form-control" id="title" placeholder="New task" name="title" onChange={(e) => { setNewTask(e.target.value) }} />
                     </div>
                     <div className="col-auto">
-                        <button type="button" className="btn btn-primary mb-3" onClick={buttonClick}>Add task</button>
+                        <button type="button" className="btn btn-primary mb-3" onClick={addTask}>Add task</button>
                     </div>
                 </form>
                 <div className='container d-flex flex-start align-items-center justify-content-center gap-2'>
@@ -81,12 +80,12 @@ const Hero = () => {
                     {
                         Tasks.map((element) => {
                             if (flag === 'all') {
-                                return <Task Tasks={element} key={element.id} deleteTask={deleteTask} onRadioClick={onRadioClick} flag={flag} />
+                                return <Task Tasks={element} key={element.id} deleteTask={deleteTask} checkTask={checkTask} flag={flag} />
                             } else if (flag === 'active') {
-                                return <Active Tasks={element} key={element.id} deleteTask={deleteTask} onRadioClick={onRadioClick} flag={flag} />
+                                return <Active Tasks={element} key={element.id} deleteTask={deleteTask} checkTask={checkTask} flag={flag} />
                             }
                             else if (flag === 'done') {
-                                return <Done Tasks={element} key={element.id} deleteTask={deleteTask} onRadioClick={onRadioClick} flag={flag} />
+                                return <Done Tasks={element} key={element.id} deleteTask={deleteTask} checkTask={checkTask} flag={flag} />
                             }
                         })
                     }
