@@ -47,7 +47,10 @@ const Hero = () => {
         setFlag(flag)
     }
 
-   
+    function handleSubmit(e) {
+        e.preventDefault();
+        addTask();
+    }
 
     useEffect(() => {
         localStorage.setItem('Tasks', JSON.stringify(Tasks))
@@ -72,7 +75,6 @@ const Hero = () => {
                     <button className='btn btn-info' onClick={() => { toggle('active') }}>Active</button>
                     <button className='btn btn-success' onClick={() => { toggle('done') }}>Done</button>
                 </div>
-                {/* <h2>{flag} Tasks</h2> */}
                 <div className='mt-0 pt-0'>
                     {
                         Tasks.map((element) => {
