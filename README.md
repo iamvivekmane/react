@@ -1,4 +1,4 @@
-# React Learning 🚀
+# React Projects 🚀
 
 A daily log of my journey learning React — from the fundamentals to building complete, deployed projects. Every folder here represents a day of practice, a new concept explored, or a mini-project built from scratch.
 
